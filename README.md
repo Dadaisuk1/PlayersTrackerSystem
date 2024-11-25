@@ -12,7 +12,7 @@ The Player Tracker System is a user-friendly web application designed to track t
   <img
     src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/python.svg"
     alt="Python Icon"
-    style="height: auto;"
+    style="height: auto; readonly"
   />
   <img
     src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/django.svg"
@@ -23,7 +23,7 @@ The Player Tracker System is a user-friendly web application designed to track t
     src="https://img.shields.io/badge/html5-%23E34F26.svg?style=plastic&logo=html5&logoColor=white"
     alt="HTML5"
   />
-  <img
+  <img style="margin-bottom: 20px;"
     src="https://img.shields.io/badge/css3-%231572B6.svg?style=plastic&logo=css3&logoColor=white"
     alt="CSS3"
   />
@@ -32,23 +32,26 @@ The Player Tracker System is a user-friendly web application designed to track t
 
 **For Team Collaboration and UI/UX Design:** <br>
 
-<div style="display: flex; align-items: center; gap: 10px;">
+<div style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
   <a href="https://github.com/Dadaisuk1/PlayersTrackerSystem">
     <img
       src="https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white"
       alt="GitHub"
+      style="text-decoration: none;"
     />
   </a>
   <a href="https://www.figma.com/design/WjXHMBKKt3egnEBv4CqToQ/Player-Tracker-Statistics?node-id=0-1&t=zUkPcDDQ5tRJ1p2G-1">
     <img
       src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=plastic&logo=figma&logoColor=white"
       alt="Figma"
+      style="text-decoration: none;"
     />
   </a>
   <a href="https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/darwindarryljean_largoza_cit_edu/EZEP77oURa5GuYXVeLkK-VkBcnK7KrnRwn5fhMBA_GeUsg?e=2WDLcF">
     <img
       src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/Gahntt%20Chart.svg"
       alt="Gantt Chart"
+      style="text-decoration: none;"
     />
   </a>
 </div>

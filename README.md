@@ -12,7 +12,7 @@ The Player Tracker System is a user-friendly web application designed to track t
   <img
     src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/python.svg"
     alt="Python Icon"
-    style="height: auto; readonly"
+    style="height: auto;y"
   />
   <img
     src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/django.svg"
@@ -33,6 +33,10 @@ The Player Tracker System is a user-friendly web application designed to track t
 **For Team Collaboration and UI/UX Design:** <br>
 
 <div style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/hp.svg"  
+    alt="HyperLink"
+  />
   <a href="https://github.com/Dadaisuk1/PlayersTrackerSystem">
     <img
       src="https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white"

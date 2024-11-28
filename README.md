@@ -37,6 +37,9 @@
 
 ### Features
 **This are the lists of Features in our System:**
+<h6>
+  **This are the lists of Features in our System:**
+</h6>
 <ul>
   <li>Real-Time Data Tracking</li>
   <li>Hero Usage Statistics</li>

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'item_app',
     'hero',
     'game',
+    'analytics', 
 ]
 
 MIDDLEWARE = [

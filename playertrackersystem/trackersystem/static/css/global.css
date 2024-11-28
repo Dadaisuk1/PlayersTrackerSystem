@@ -208,7 +208,6 @@ form {
 .hero-form {
     display: flex;
     flex-direction: column;
-    background-color: #0051D6;
 }
 
 .container form{

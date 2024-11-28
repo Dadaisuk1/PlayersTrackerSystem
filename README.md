@@ -33,7 +33,11 @@
 **This are the lists of Features in our System:**
 
 <ul>
-  <ol>Number 1</ol>
+  <li>Real-Time Data Tracking</li>
+  <li>Hero Usage Statistics</li>
+  <li>Customizable Dashboards</li>
+  <li>Inventory Tracker</li>
+  <li>Detailed Match Reports</li>
 </ul>
 <br>
 

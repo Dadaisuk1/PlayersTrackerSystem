@@ -1,4 +1,19 @@
-**/__pycache__
-# Ignore the .env file
-.venv/
-.darwinenv
+# Python bytecode
+*.pyc
+__pycache__/
+
+# Django-specific
+db.sqlite3       # SQLite database (if used)
+*.log            # Log files
+*.pot            # Translation template files
+*.pyc            # Python compiled files
+*.pyo            # Python optimization files
+*.db             # Database files
+*.sqlite3        # SQLite3 database files
+*.env            # Environment variables file
+
+# Virtual environment
+darwinenv/        # Your virtual environment directory
+
+# Django migrations
+migrations/

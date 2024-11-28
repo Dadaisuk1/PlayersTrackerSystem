@@ -1,0 +1,20 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ form.instance.id|yesno:"Edit Hero,Add Hero" }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ form.instance.id|yesno:"Edit Hero,Add Hero" }}</h1>
+        <form method="post" class="hero-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-save">Save</button>
+        </form>
+        <a href="{% url 'hero_list' %}" class="btn btn-back">Back to List</a>
+    </div>
+</body>
+</html>

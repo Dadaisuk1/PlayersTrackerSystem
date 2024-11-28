@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete {{ item.name }}</title>
+    <style>
+        /* Reset margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://i.ytimg.com/vi/QpenFEg9PjI/maxresdefault.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background for contrast */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6); /* Soft shadow */
+            text-align: center;
+        }
+
+        h1 {
+            color: #FFD700; /* Golden color for titles */
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 25px;
+        }
+
+        form {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        button[type="submit"] {
+            padding: 12px 25px;
+            background-color: #E53935; /* Red color for deletion */
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #C62828; /* Darker red on hover */
+        }
+
+        a.cancel-button {
+            display: inline-block;
+            margin-top: 20px;
+            color: #4A90E2; /* Blue color for cancel button */
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            font-weight: bold;
+        }
+
+        a.cancel-button:hover {
+            color: #357ABD; /* Darker blue on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Are you sure you want to delete "{{ item.item_name }}"?</h1>
+        <p>This action cannot be undone. Please confirm your choice.</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirm</button>
+        </form>
+        <br>
+        <a href="{% url 'item_list' %}" class="cancel-button">Cancel</a>
+    </div>
+</body>
+</html>

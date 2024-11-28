@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a full-screen background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #4A90E2, #9013FE);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    margin-top: 70px; /* To prevent overlap with navbar */
+}
+
+.container {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Styling for the form container */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+/* Style for form elements */
+form p {
+    margin-bottom: 15px;
+    color: #D1F1FF;
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+    background-color: #0063FF;
+    color: #D1F1FF;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0051D6;
+}
+
+/* Disabled button style */
+button[type="submit"]:disabled {
+    background-color: #888; /* Faded gray color */
+    color: #ccc; /* Lighter text color */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+    opacity: 0.6; /* Make it look more faded */
+    box-shadow: none; /* Remove any shadow if applied */
+}

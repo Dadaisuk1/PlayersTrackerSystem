@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <!-- Include Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://cdn.fastly.steamstatic.com/store/home/store_home_share.jpg') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: rgba(7, 49, 110, 0.95);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            width: 60%;
+            max-width: 900px;
+            height: 500px;
+        }
+
+        .image-container {
+            width: 50%;
+            height: 100%;
+            background: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4sDh6OiJWpIAw3JJuT49LN1xIgwV-mxDJctOzf9QbLAKkPxxCBvQAcYiaDJpANMvBCMrpp7HP2pOU5xeeP0YoWrGbDrBuL5sg50OP2hFbT_cGEhHE_0ydiEGU2WirlD3JTwjIlXlPr_D7/w919/battle-academia-leona-splash-art-lol-uhdpaper.com-8K-5.3309-wp.thumbnail.jpg') center/cover no-repeat;
+        }
+
+        .form-container {
+            flex: 1;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-group {
+            width: 80%;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 40px 12px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #333;
+        }
+
+        input[type="submit"],
+        .action-button {
+            padding: 12px 20px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin: 10px 0;
+            width: 80%;
+        }
+
+        input[type="submit"]:hover,
+        .action-button:hover {
+            background-color: #357ab8;
+        }
+
+        input[type="submit"]:disabled,
+        .action-button:disabled {
+            background-color: #b0c4de;
+            cursor: not-allowed;
+        }
+
+        .checkbox-container {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .checkbox-container label {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        #passwordError {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="image-container"></div>
+        <div class="form-container">
+            <h2>Login</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    {% comment %} <label for="username">Username:</label> {% endcomment %}
+                    <input type="text" name="username" required placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    {% comment %} <label for="password">Password:</label> {% endcomment %}
+                    <input type="password" name="password" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePassword('password')">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                </div>
+                <input type="submit" value="Login" class="action-button">
+            </form>
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+            
+            <p>Don't have an account? <a href="{% url 'register' %}" class="link">Register Here</a></p>
+            <a href="{% url 'home' %}">Back</a>
+        </div>
+    </div>
+    <script>
+        function validatePasswords() {
+            const password = document.getElementById('password').value;
+            const errorSpan = document.getElementById('passwordError');
+
+            if (password !== password) {
+                errorSpan.style.display = 'block';
+                return false; // Prevent form submission
+            } else {
+                errorSpan.style.display = 'none';
+                return true; // Allow form submission
+            }
+        }
+
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const icon = input.nextElementSibling.querySelector('i');
+            const type = input.type === 'password' ? 'text' : 'password';
+            input.type = type;
+            icon.classList.toggle('fa-eye-slash'); // Toggle eye icon
+        }
+    </script>
+</body>
+</html>

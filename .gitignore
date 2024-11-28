@@ -1,4 +1,3 @@
 **/__pycache__
 # Ignore the .env file
-.env
-.desktop.ini
+.venv

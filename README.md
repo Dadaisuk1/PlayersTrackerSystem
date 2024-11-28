@@ -45,15 +45,6 @@
   <li>Detailed Match Reports</li>
 </ul>
 
-### Entity Relationship Diagram
-<div style="display: flex; align-items: center; gap: 10px;">
-  <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/PTSErd.svg"
-    alt="ERD"
-    style="height: auto;y"
-  />
-</div>
-
 ### Team Collaboration and UI/UX Design
 <!-- **For Team Collaboration and UI/UX Design:** <br> -->
 >Just click the icons to view Gantt Chart and Figma:
@@ -83,6 +74,15 @@
       style="text-decoration: none;"
     />
   </a>
+</div>
+
+### Entity Relationship Diagram
+<div style="display: flex; align-items: center; gap: 10px;">
+  <img
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/PTSErd.svg"
+    alt="ERD"
+    style="height: auto;y"
+  />
 </div>
 
 <div>

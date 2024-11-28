@@ -1,6 +1,5 @@
-# heroes/forms.py
 from django import forms
-from game.models import Game
+from .models import Game
 
 class GameForm(forms.ModelForm):
     class Meta:

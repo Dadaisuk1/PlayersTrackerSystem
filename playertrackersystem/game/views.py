@@ -2,13 +2,19 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Game
 from .forms import GameForm
 
+# Directory when i click a game
+def game_detail(request, game_name):
+    # Fetch the game based on the name
+    game = Game.objects.get(game_name = game_name)
+    return render(request, 'game_detail.html', {'game': game})
+
 # CREATE - Add a new game
 def game_create(request):
     if request.method == 'POST':
         form = GameForm(request.POST, request.FILES)  # Handle file uploads
         if form.is_valid():
             form.save()
-            return redirect('game_list')  # Redirect to the game list page
+            return redirect('game_list.html')  # Redirect to the game list page
     else:
         form = GameForm()
     return render(request, 'game_create.html', {'form': form})

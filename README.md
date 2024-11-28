@@ -27,11 +27,9 @@
     alt="CSS3"
   />
 </div>
-<br>
 
 ### Features
 **This are the lists of Features in our System:**
-
 <ul>
   <li>Real-Time Data Tracking</li>
   <li>Hero Usage Statistics</li>

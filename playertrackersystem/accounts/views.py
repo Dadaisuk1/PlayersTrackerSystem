@@ -4,7 +4,7 @@ from .models import Player
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import check_password
-from trackersystem.models import Game
+from game.models import Game
 from django.contrib.auth.hashers import make_password
 
 # Home page view

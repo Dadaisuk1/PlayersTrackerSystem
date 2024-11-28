@@ -14,6 +14,7 @@ db.sqlite3       # SQLite database (if used)
 
 # Virtual environment
 darwinenv/        # Your virtual environment directory
+amiel/
 
 # Django migrations
 migrations/

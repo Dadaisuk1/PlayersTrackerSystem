@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('item/', include('item_app.urls')), 
+    path('analytics/', include('analytics.urls')), 
     path('hero/', include('hero.urls')),
     path('game/', include('game.urls')),
     path('', include("trackersystem.urls")),

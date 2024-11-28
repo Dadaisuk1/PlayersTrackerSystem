@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if analytics %}Update Analytics{% else %}Create Analytics{% endif %}</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            display: block;
+            width: 100%;
+        }
+
+        .form-group {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input, textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #555;
+            border-radius: 8px;
+            background-color: #222;
+            color: white;
+            width: 100%;
+        }
+
+        textarea {
+            height: 120px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #f9b800;
+            color: black;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #ffdd00;
+        }
+
+        a {
+            color: #f9b800;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: color 0.3s;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        a:hover {
+            color: #ffdd00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{% if analytics %}Update Analytics{% else %}Create Analytics{% endif %}</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="analytics_id">Analytics ID</label>
+                {{ form.analytics_id }}
+            </div>
+            <div class="form-group">
+                <label for="kills">Kills</label>
+                {{ form.kills }}
+            </div>
+            <div class="form-group">
+                <label for="death">Deaths</label>
+                {{ form.death }}
+            </div>
+            <div class="form-group">
+                <label for="assist">Assists</label>
+                {{ form.assist }}
+            </div>
+            <div class="form-group">
+                <label for="win_loss">Win/Loss</label>
+                {{ form.win_loss }}
+            </div>
+
+            <button type="submit">{% if analytics %}Update{% else %}Create{% endif %}</button>
+        </form>
+
+        <br>
+        <a href="{% url 'analytics_list' %}">Back to Analytics List</a>
+    </div>
+</body>
+</html>

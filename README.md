@@ -13,9 +13,8 @@
 ---
 ### Teach Stack
 <h6>
-  Just click the icons to view Gantt Chart and Figma:
+  This project is built using the following technologies:
 </h6>
-<!-- **This project is built using the following technologies:** <br> -->
 
 <div style="display: flex; align-items: center; gap: 10px;">
   <img

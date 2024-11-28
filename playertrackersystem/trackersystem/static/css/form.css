@@ -1,0 +1,90 @@
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the form */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+/* Form heading */
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Form styles */
+.hero-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styling the form elements */
+.hero-form input[type="text"],
+.hero-form select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Save and Back buttons */
+.btn {
+    padding: 10px 15px;
+    margin-top: 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Save button */
+.btn-save {
+    background-color: #0051D6;
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #0051D6;
+}
+
+/* Back to list button */
+.btn-back {
+    background-color: #95a5a6;
+    color: white;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+}
+
+.btn-back:hover {
+    background-color: #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}

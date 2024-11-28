@@ -1,0 +1,126 @@
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.wrapper {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+    margin: 10px;
+}
+
+.btn-add {
+    font-size: 12px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #0051D6;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+}
+
+.btn-add:hover {
+    background-color: #007CFF;
+}
+
+ul.hero-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.hero-list li {
+    background-color: #ecf0f1;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-name {
+    font-weight: bold;
+}
+
+.hero-role {
+    font-style: italic;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn-edit {
+    background-color: #0051D6;
+}
+
+.btn-edit:hover {
+    background-color: #007CFF;
+}
+
+.btn-delete {
+    background-color: #2abfff;
+}
+
+.btn-delete:hover {
+    background-color: #15526c;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    ul.hero-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .actions {
+        margin-top: 10px;
+    }
+}

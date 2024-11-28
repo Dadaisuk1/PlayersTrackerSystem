@@ -29,9 +29,9 @@
 </div>
 <br>
 ### Features
-**This are the lists of Features in our System:
+**This are the lists of Features in our System:**
 <ul>
-  <li>Number 1</li>
+  <ol>Number 1</ol>
 </ul>
 <br>
 ### Team Collaboration and UI/UX Design

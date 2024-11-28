@@ -28,12 +28,15 @@
   />
 </div>
 <br>
+
 ### Features
 **This are the lists of Features in our System:**
+
 <ul>
   <ol>Number 1</ol>
 </ul>
 <br>
+
 ### Team Collaboration and UI/UX Design
 <!-- **For Team Collaboration and UI/UX Design:** <br> -->
 **Just click the icons to view Gantt Chart and Figma:**

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Hero</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'images/PlayerTracker.png' %}">
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <!-- Logo -->
+        {% comment %} <img src="{% static 'images/PlayerTracker.png' %}" alt="Player Tracker Logo"> {% endcomment %}
+        <div class="logo">
+            <span class="player">Player</span><span class="tracker">Tracker</span>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            {% comment %} <li><a href="#">Apps</a></li>
+            <li><a href="#">Developers</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">About</a></li> {% endcomment %}
+            <li><a href="{% url 'hero_list' %}">Add Hero</a></li>
+            <li><a href="{% url 'game_create' %}">Add Game</a></li>
+            <li><a href="{% url 'item_list' %}">Inventory</a></li>
+        </ul>
+
+        <!-- Login/Sign Up Links -->
+        <div class="auth-links">
+            {% if player %}
+                <a href="{% url 'profile' %}">Welcome, {{ player.username }}</a>
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="container">
+        <h1>Create New Hero</h1>
+        <form method="post" enctype="multipart/form-data" id="heroForm">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <!-- Add an id to the button and disable it initially -->
+            <button type="submit" class="button" id="addHeroButton" disabled>Add Hero</button>
+        </form>
+    </div>
+
+    <!-- JavaScript to enable button after typing -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("heroForm");
+            const button = document.getElementById("addHeroButton");
+
+            form.addEventListener("input", function () {
+                let formFilled = false;
+
+                for (const input of form.elements) {
+                    if (input.type !== "submit" && input.value.trim() !== "") {
+                        formFilled = true;
+                        break;
+                    }
+                }
+                button.disabled = !formFilled;
+            });
+        });
+    </script>
+</body>
+</html>

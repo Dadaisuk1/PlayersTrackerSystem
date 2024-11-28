@@ -1,0 +1,36 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayerTracker</title>
+    <link rel="icon" href="{% static 'images/PTS icon.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <h1>Hero List</h1>
+            <div class="hero-list">
+                {% for hero in heroes %}
+                    {% if hero.hero_id %}
+                        <div class="hero-card">
+                            <!-- Use the hero.image.url to get the correct image path -->
+                            <img src="{{ hero.image.url }}" alt="{{ hero.hero_name }}" class="hero-image">
+                            <span class="hero-name">{{ hero.hero_name }}</span> - 
+                            <span class="hero-role">Role: {{ hero.role }}</span>
+                            <div class="actions">
+                                <a href="{% url 'hero_update' hero.hero_id %}" class="btn btn-edit">Edit</a> |
+                                <a href="{% url 'hero_delete' hero.hero_id %}" class="btn btn-delete">Delete</a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <p>No ID for this hero, skipping...</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <a href="{% url 'hero_create' %}" class="btn-add">Add New Hero</a>
+    </div>
+</body>
+</html>

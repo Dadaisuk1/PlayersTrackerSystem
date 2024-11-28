@@ -10,11 +10,7 @@ urlpatterns = [
     path('', views.home_page, name='home'),
     path('admin/', admin.site.urls),
     path('heroes/', include('hero.urls')),
-    # Game URLs
-    path('game/<str:game_name>/', views.game_detail, name='game_detail'),
-    path('game/create/', views.game_create, name='game_create'),
-    path('game/update/<int:game_id>/', views.game_update, name='game_update'),
-    path('game/delete/<int:game_id>/', views.game_delete, name='game_delete'),
+    path('game/', include('game.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # if settings.DEBUG:

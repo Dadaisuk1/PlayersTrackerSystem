@@ -23,6 +23,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('item/', include('item_app.urls')), 
     path('hereos/', include('trackersystem.urls')),
+    path('analytics/', include('analytics.urls')), 
     path('', include("trackersystem.urls")),
      # Include item_app URLs
     

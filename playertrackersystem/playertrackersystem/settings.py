@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'trackersystem',
     'accounts',
     'item_app',
+    'hero',
+    'game',
 ]
 
 MIDDLEWARE = [

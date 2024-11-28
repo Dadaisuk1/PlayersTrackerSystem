@@ -1,19 +1,15 @@
 # urls.py
-from django.urls import path
 from . import views
+from django.contrib import admin
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     # path('', views.landing_page, name='landing_page'),  # Landing page as the root URL
     path('', views.home_page, name='home'),
-
-    # Hero URLs
-    path('heroes/', views.hero_list, name='hero_list'),
-    path('hero/create/', views.hero_create, name='hero_create'),
-    path('hero/update/<int:id>/', views.hero_update, name='hero_update'),
-    path('hero/delete/<int:id>/', views.hero_delete, name='hero_delete'),
-
+    path('admin/', admin.site.urls),
+    path('heroes/', include('hero.urls')),
     # Game URLs
     path('game/<str:game_name>/', views.game_detail, name='game_detail'),
     path('game/create/', views.game_create, name='game_create'),

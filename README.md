@@ -1,4 +1,10 @@
-## Player Tracker System
+<!-- ## Player Tracker System -->
+<div style="display: flex; align-items: center; gap: 10px;">
+  <img
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/PTSLogo.svg"
+    alt="Player Tracker System Logo"
+  />
+</div>
 ### Powered by Django
 
 >The Player Tracker System is a user-friendly web application designed to track the statistics and gameplay history of your favorite players. The application provides a simple and intuitive interface, ensuring ease of use while offering comprehensive updates on player performance.

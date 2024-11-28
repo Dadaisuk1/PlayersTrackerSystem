@@ -26,7 +26,5 @@ urlpatterns = [
     path('hero/', include('hero.urls')),
     path('game/', include('game.urls')),
     path('', include("trackersystem.urls")),
-     # Include item_app URLs
-    
-    
+    # Include item_app URLs
 ]

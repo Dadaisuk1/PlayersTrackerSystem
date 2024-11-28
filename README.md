@@ -31,7 +31,7 @@
 ### Features
 **This are the lists of Features in our System:**
 <ul>
-  <li>Real-Time Data Tracking</li>
+  <li>->Real-Time Data Tracking</li>
   <li>Hero Usage Statistics</li>
   <li>Customizable Dashboards</li>
   <li>Inventory Tracker</li>

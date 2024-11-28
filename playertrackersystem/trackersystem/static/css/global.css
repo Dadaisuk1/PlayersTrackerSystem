@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles for All Pages */
+body {
+    font-family: Inter, sans-serif;
+    background: linear-gradient(to bottom right, #4A90E2, #9013FE);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    margin-top: 70px; /* To prevent overlap with navbar */
+}
+
+a {
+    text-decoration: none;
+}
+
+/* General Full-Screen Backgrounds */
+body.home, body.create, body.list {
+    background: linear-gradient(to bottom right, #4A90E2, #9013FE);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body.delete, body.form {
+    background-color: #f7f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for All Pages */
+.container {
+    text-align: center;
+    padding: 50px 20px;
+    /* width: 100%; */
+}
+
+/* Title Style */
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #D1F1FF;
+    margin-bottom: 40px;
+}
+
+/* Button Styles */
+button, .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px 0;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Specific Button Styles */
+button[type="submit"], .btn-delete, .btn-save {
+    background-color: #0063FF;
+    color: white;
+}
+
+button[type="submit"]:hover, .btn-delete:hover, .btn-save:hover {
+    background-color: #0051D6;
+}
+
+button[type="submit"]:disabled, .btn-cancel {
+    background-color: #888;
+    color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn-cancel {
+    background-color: #95a5a6;
+    text-align: center;
+}
+
+.btn-cancel:hover {
+    background-color: #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .game-card, .hero-card {
+        width: 100%;
+        max-width: 290px;
+    }
+}
+
+/* Game Card & Hero Styles */
+.game-card, .hero-card {
+    display: inline-block;
+    margin: 20px;
+    width: 290px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover, .hero-card:hover {
+    transform: scale(1.05);
+}
+
+/* Game Image Styling */
+.game-image, .hero-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: solid 4px #D1F1FF;
+    cursor: pointer;
+}
+
+/* Hero Image Specific Adjustments */
+.hero-image {
+    height: 200px;
+    object-position: top;
+}
+
+/* Hero Name & Role Styling */
+.hero-name, .game-title {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #D1F1FF;
+    font-weight: bold;
+}
+
+.hero-role {
+    font-style: italic;
+    color: #0063FF;
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+    font-size: 1rem;
+}
+
+/* Actions Group */
+.button-group a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0063FF;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-group a:hover {
+    background-color: #0051D6;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.container input[type="text"], .hero-form select, input[type="file"], textarea {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #D1F1FF;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 250px;
+    max-width: 500px;
+    justify-content: center;
+}
+
+/* Create Form */
+.hero-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #0051D6;
+}
+
+.container form{
+    width: 1000px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button Styling */
+.btn-save, .btn-back {
+    margin-top: 10px;
+    padding: 10px 15px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.btn-back {
+    background-color: #0051D6;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px 0;
+    text-decoration: none;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.btn-back:hover {
+    background-color: #0051D6;
+}
+
+/* List Layouts */
+.hero-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.hero-card {
+    background-color: #ecf0f1;
+    padding: 15px;
+    text-align: center;
+    border-radius: 20px;
+    border: solid 4px #D1F1FF;
+}
+
+/* Additional Hero Card Styling */
+.hero-card:hover {
+    transform: scale(1.05);
+}
+
+/* Hero Info Styling */
+.hero-name {
+    font-weight: bold;
+    color: #0063FF;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.hero-role {
+    font-style: italic;
+    color: #0063FF;
+}

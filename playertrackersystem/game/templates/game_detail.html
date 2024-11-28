@@ -1,3 +1,8 @@
-<h1>{{ game.game_name }}</h1>
-<img src="{{ game.image.url }}" alt="{{ game.game_name }}">
-<p>{{ game.description }}</p>
+{% extends 'navbar.html' %}
+
+{% block content %}
+    <h1>{{ game.game_name }}</h1>
+    <img src="{{ game.image.url }}" alt="{{ game.game_name }}">
+    <p>{{ game.description }}</p>
+    <a href="javascript:history.back()" class="btn-back">Back</a>
+{% endblock %}

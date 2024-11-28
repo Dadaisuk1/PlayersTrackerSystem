@@ -1,3 +1,5 @@
+{% extends 'navbar.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,24 +10,6 @@
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head> 
 <body>
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <div class="logo">
-            <span class="player">Player</span><span class="tracker">Tracker</span>
-        </div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Apps</a></li>
-            <li><a href="#">Developers</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-        <div class="auth-links">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
-        </div>
-    </div>
-
     <!-- Landing Page Content -->
     <div class="container">
         <h1 class="all-games">All Games</h1>
@@ -49,7 +33,9 @@
         
         <div class="create-button">
             <a href="{% url 'game_create' %}" class="button-group">Create Game</a>
+            <a href="javascript:history.back()" class="btn-back">Back</a>
         </div>        
     </div>
 </body>
 </html>
+{% endblock %}

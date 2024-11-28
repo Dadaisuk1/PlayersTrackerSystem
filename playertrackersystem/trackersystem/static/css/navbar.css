@@ -1,0 +1,79 @@
+/* Navigation Bar Styles */
+.navbar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.146);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.player {
+    color: white;
+}
+
+.tracker {
+    color: #0063FF;
+}
+
+.navbar img {
+    width: 50px;
+    height: auto;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #0063FF;
+}
+
+.navbar .auth-links a {
+    background-color: #0063FF;
+    color: #D1F1FF;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar .auth-links a:hover {
+    background-color: #0051D6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

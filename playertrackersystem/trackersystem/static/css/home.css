@@ -1,0 +1,214 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a full-screen background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #4A90E2, #9013FE);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    margin-top: 70px; /* To prevent overlap with navbar */
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Main container for the landing page */
+.container {
+    text-align: center;
+    padding: 50px 20px;
+    width: 100%;
+}
+
+/* Main title for "All Games" */
+.all-games, h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #D1F1FF;
+    margin-bottom: 40px;
+}
+
+/* Game card styles */
+.game-card {
+    display: inline-block;
+    margin: 20px;
+    width: 290px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.game-image {
+    width: 290px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: solid 4px #D1F1FF;
+    cursor: pointer;
+}
+
+.game-title {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #D1F1FF;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Button styles inside game cards */
+.button-group {
+    margin-top: 15px;
+}
+
+.button-group a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0063FF;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-group a:hover {
+    background-color: #0051D6;
+}
+
+/* Error message style */
+.error-message {
+    color: red;
+    font-size: 1rem;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.146);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.player {
+    color: white;
+}
+
+.tracker {
+    color: #0063FF;
+}
+
+.navbar img {
+    width: 50px;
+    height: auto;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #0063FF;
+}
+
+.navbar .auth-links a {
+    background-color: #0063FF;
+    color: #D1F1FF;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar .auth-links a:hover {
+    background-color: #0051D6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .game-card {
+        width: 100%;
+        max-width: 290px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}
+
+/* Styling for "Create Game" and other buttons */
+.create-button a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0063FF;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Add margin if needed */
+}
+
+.create-button a:hover {
+    background-color: #0051D6;
+}
+
+/* Button styles inside game cards */
+.button-group a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0063FF;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-group a:hover {
+    background-color: #0051D6;
+}

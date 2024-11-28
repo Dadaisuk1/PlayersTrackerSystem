@@ -1,12 +1,5 @@
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayerTracker</title>
-    <link rel="icon" href="{% static 'images/PTS icon.png' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/list.css' %}">
-</head>
+{% extends 'navbar.html' %}
+{% block content %}
 <body>
     <div class="container">
         <div class="wrapper">
@@ -34,3 +27,4 @@
     </div>
 </body>
 </html>
+{% endblock %}

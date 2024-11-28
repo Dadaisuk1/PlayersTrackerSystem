@@ -1,3 +1,6 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +18,10 @@
             {{ form.as_p }}
 
             <!-- Add an id to the button and disable it initially -->
-            <button type="submit" class="button" id="addGameButton" disabled>Add Game</button>
+            <div class="buttons">
+                <button type="submit" class="button" id="addGameButton" disabled>Add Game</button>
+                <a href="javascript:history.back()" class="btn-back">Back</a>
+            </div>
         </form>
     </div>
 
@@ -40,3 +46,4 @@
     </script>
 </body>
 </html>
+{% endblock %}

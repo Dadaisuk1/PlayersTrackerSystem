@@ -1,52 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PlayerTracker</title>
-    {% load static %}
-    <link rel="icon" href="{% static 'images/PTS icon.png' %}">
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-</head>
-<body>
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <!-- Logo -->
-        {% comment %} <img src="{% static 'images/PlayerTracker.png' %}" alt="Player Tracker Logo"> {% endcomment %}
-        <div class="logo">
-            <span class="player">Player</span><span class="tracker">Tracker</span>
-        </div>
+{% extends 'navbar.html' %}
 
-        <!-- Navigation Links -->
-        <ul>
-            <li><a href="#">Home</a></li>
-            {% comment %} <li><a href="#">Apps</a></li>
-            <li><a href="#">Developers</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">About</a></li> {% endcomment %}
-            <li><a href="{% url 'hero_list' %}">Add Hero</a></li>
-            <li><a href="{% url 'game_create' %}">Add Game</a></li>
-            <li><a href="{% url 'item_list' %}">Inventory</a></li>
-        </ul>
-
-        <!-- Login/Sign Up Links -->
-        <div class="auth-links">
-            {% if player %}
-                <a href="{% url 'profile' %}">Welcome, {{ player.username }}</a>
-                <a href="{% url 'logout' %}">Logout</a>
-            {% else %}
-                <a href="{% url 'login' %}">Login</a>
-                <a href="{% url 'register' %}">Register</a>
-            {% endif %}
-        </div>
-    </div>
-
-    <!-- Landing Page Content -->
+{% block content %}
     <div class="container">
         <h1 class="all-games">All Games</h1>
-    
         {% for game in games %}
         <div class="game-card">
-            <!-- Link the game card to its detail page -->
             <a href="{% url 'game_detail' game_name=game.game_name %}">
                 <img src="{{ game.image.url }}" alt="{{ game.game_name }}" class="game-image">
                 <h2 class="game-title">{{ game.game_name }}</h2>
@@ -54,6 +12,4 @@
         </div>
         {% endfor %}
     </div>
-    
-</body>
-</html>
+{% endblock %}

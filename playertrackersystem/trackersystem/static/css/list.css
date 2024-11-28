@@ -1,96 +1,100 @@
 /* Global styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a full-screen background */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #4A90E2, #9013FE);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    color: #fff;
+    margin-top: 70px; /* To prevent overlap with navbar */
 }
 
+/* Main container for the list */
 .container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
-}
-
-.wrapper {
     text-align: center;
-    padding-bottom: 10px;
+    padding: 50px 20px;
+    width: 100%;
 }
 
+/* Title style for the list */
 h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #D1F1FF;
+    margin-bottom: 40px;
 }
 
-.btn {
-    padding: 10px 15px;
-    text-decoration: none;
-    color: white;
-    background-color: #3498db;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-bottom: 15px;
-    margin: 10px;
+/* Flex container to handle hero list */
+.hero-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 0 20px;
 }
 
-.btn-add {
-    font-size: 12px;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: white;
-    background-color: #0051D6;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-
-}
-
-.btn-add:hover {
-    background-color: #007CFF;
-}
-
-ul.hero-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul.hero-list li {
+/* Individual hero card */
+.hero-card {
+    height: 100%;
     background-color: #ecf0f1;
     padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    border: solid 4px #D1F1FF;
+    transition: transform 0.3s ease;
 }
 
+.hero-card:hover {
+    transform: scale(1.05);
+}
+
+/* Hero image styles */
+.hero-image {
+    width: 100%;
+    height: 200px;
+    object-position: top;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Hero name and role */
 .hero-name {
     font-weight: bold;
+    color: #0063FF;
+    margin-top: 10px;
+    font-size: 18px;
 }
 
 .hero-role {
     font-style: italic;
+    color: #0063FF;
 }
 
+/* Actions for each item */
 .actions {
     display: flex;
-    align-items: center;
+    justify-content: center;
     gap: 10px;
+    margin-top: 15px;
 }
 
+/* Button styles for each action */
 .btn-edit, .btn-delete {
     padding: 5px 10px;
     font-size: 0.9rem;
     text-decoration: none;
     color: white;
-    border-radius: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-edit {
@@ -109,18 +113,115 @@ ul.hero-list li {
     background-color: #15526c;
 }
 
+/* Add new hero button */
+.btn-add {
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.btn-add:hover {
+    background-color: #c0392b;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.146);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.player {
+    color: white;
+}
+
+.tracker {
+    color: #0063FF;
+}
+
+.navbar img {
+    width: 50px;
+    height: auto;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #0063FF;
+}
+
+.navbar .auth-links a {
+    background-color: #0063FF;
+    color: #D1F1FF;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar .auth-links a:hover {
+    background-color: #0051D6;
+}
+
 /* Responsive Design */
-@media (max-width: 600px) {
-    .container {
-        width: 90%;
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
     }
 
-    ul.hero-list li {
+    .navbar ul {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .hero-list {
+        grid-template-columns: 1fr;
     }
 
-    .actions {
-        margin-top: 10px;
+    .container {
+        padding: 20px;
+    }
+
+    .btn-add {
+        padding: 10px 20px;
+        font-size: 1rem;
     }
 }

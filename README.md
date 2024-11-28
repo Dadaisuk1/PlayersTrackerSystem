@@ -41,6 +41,7 @@
 ### Team Collaboration and UI/UX Design
 <!-- **For Team Collaboration and UI/UX Design:** <br> -->
 **Just click the icons to view Gantt Chart and Figma:**
+>> Just click the icons to view Gantt Chart and Figma:
 <div style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
   <img
     src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/hp.svg"  

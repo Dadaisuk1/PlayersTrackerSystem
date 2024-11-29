@@ -41,13 +41,18 @@
 <h6>
   This are the lists of Features in our System:
 </h6>
-<ul>
-  <li>Real-Time Data Tracking</li>
+<ol>
+  <li>
+    Real-Time Data Tracking
+    <ul>
+      <li>Core functionality to track and display basic player stats such as match history, win/loss ratios, and KDA ratios.</li>
+    </ul>
+  </li>
   <li>Hero Usage Statistics</li>
   <li>Customizable Dashboards</li>
   <li>Inventory Tracker</li>
   <li>Detailed Match Reports</li>
-</ul>
+</ol>
 
 ### Team Collaboration and UI/UX Design
 <h6>

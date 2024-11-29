@@ -7,11 +7,15 @@ from accounts.models import Player
 # READ - List all heroes
 def hero_list(request):
     heroes = Hero.objects.all()
-    return render(request, 'hero_list.html', {'heroes': heroes})
+    player_id = request.session.get('player_id')  # Retrieve player ID from session
+    player = Player.objects.get(playerID=player_id) if player_id else None  # Fetch Player object or set to None
+    return render(request, 'hero_list.html', {'heroes': heroes, 'player'  : player})
     
 
 # CREATE - Add a new hero
 def hero_create(request):
+    player_id = request.session.get('player_id')  # Retrieve player ID from session
+    player = Player.objects.get(playerID=player_id) if player_id else None  # Fetch Player object or set to None
     if request.method == 'POST':
         form = HeroForm(request.POST, request.FILES)  # Add request.FILES to handle file upload
         if form.is_valid():
@@ -22,7 +26,7 @@ def hero_create(request):
     else:
         form = HeroForm()
     
-    return render(request, 'hero_form.html', {'form': form})
+    return render(request, 'hero_form.html', {'form': form, 'player' : player})
 
 # UPDATE - Edit an existing hero
 def hero_update(request, id):

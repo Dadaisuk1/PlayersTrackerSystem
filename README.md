@@ -37,7 +37,7 @@
   />
 </div>
 
-### Features
+### MVP Features
 <h6>
   This are the lists of Features in our System:
 </h6>

@@ -89,28 +89,21 @@
 </h6>
 <div style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
   <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/hp.svg"  
-    alt="HyperLink"
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/hp.svg"
   />
   <a href="https://github.com/Dadaisuk1/PlayersTrackerSystem">
     <img
       src="https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white"
-      alt="GitHub"
-      style="text-decoration: none;"
     />
   </a>
   <a href="https://www.figma.com/design/WjXHMBKKt3egnEBv4CqToQ/Player-Tracker-Statistics?node-id=0-1&t=zUkPcDDQ5tRJ1p2G-1">
     <img
       src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=plastic&logo=figma&logoColor=white"
-      alt="Figma"
-      style="text-decoration: none;"
     />
   </a>
   <a href="https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/darwindarryljean_largoza_cit_edu/EZEP77oURa5GuYXVeLkK-VkBcnK7KrnRwn5fhMBA_GeUsg?e=2WDLcF">
     <img
       src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/Gahntt%20Chart.svg"
-      alt="Gantt Chart"
-      style="text-decoration: none;"
     />
   </a>
 </div>

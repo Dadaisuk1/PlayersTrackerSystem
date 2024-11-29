@@ -42,16 +42,41 @@
   This are the lists of Features in our System:
 </h6>
 <ol>
-  <li>
+  <li style="font-style: bold;">
     Real-Time Data Tracking
     <ul>
       <li>Core functionality to track and display basic player stats such as match history, win/loss ratios, and KDA ratios.</li>
+      <li>Integration with one or two popular MOBA games to pull real-time data.</li>
     </ul>
   </li>
-  <li>Hero Usage Statistics</li>
-  <li>Customizable Dashboards</li>
-  <li>Inventory Tracker</li>
-  <li>Detailed Match Reports</li>
+  <li style="font-style: bold;">
+    Hero Usage Statistics
+    <ul>
+      <li>Basic tracking of hero usage, including win rates and KDA ratios for each hero.</li>
+      <li>Simple visualization (e.g., bar charts) to show performance with different heroes.</li>
+    </ul>
+  </li>
+  <li style="font-style: bold;">
+    Customizable Dashboards
+    <ul>
+      <li>Allow users to choose which stats they want to see on their main dashboard.</li>
+      <li>Provide a default dashboard layout that can be personalized with drag-and-drop functionality.</li>
+    </ul>
+  </li>
+  <li style="font-style: bold;">
+    Inventory Tracker
+    <ul>
+      <li>Generate basic post-match reports that include essential data such as damage dealt, damage taken, and objective contributions.</li>
+      <li>Focus on one or two key stats to keep the feature simple.</li>
+    </ul>
+  </li>
+  <li style="font-style: bold;">
+    Detailed Match Reports
+    <ul>
+      <li>Track and display the items a player purchased during a match.</li>
+      <li>Include a basic analysis of how item builds correlated with match outcomes.</li>
+    </ul>
+  </li>
 </ol>
 
 ### Team Collaboration and UI/UX Design

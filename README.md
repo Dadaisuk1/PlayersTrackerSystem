@@ -35,6 +35,10 @@
     src="https://img.shields.io/badge/css3-%231572B6.svg?style=plastic&logo=css3&logoColor=white"
     alt="CSS3"
   />
+  <img style="margin-bottom: 20px;"
+    src="https://img.shields.io/badge/javascript-%231572B6.svg?style=plastic&logo=javascript&logoColor=white"
+    alt="Javascript"
+  />
 </div>
 
 ### MVP Features

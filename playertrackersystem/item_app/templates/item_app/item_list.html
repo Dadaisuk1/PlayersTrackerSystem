@@ -1,184 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item List</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+{% extends 'navbar.html' %}
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom right, #4A90E2, #9013FE);
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-            background: #0d72e7;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 90%; /* Ensure enough height to place the button at the bottom */
-        }
-
-        .content {
-            flex: 1;
-        }
-
-        h1 {
-            color: #FFD700;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            margin-left: 300px;
-            
-        }
-
-        a.create-button {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 12px 25px;
-            background-color: #0d47a1;
-            color: #fff;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            text-transform: uppercase;
-            margin-left: 280px;
-        }
-
-        a.create-button:hover {
-            background-color: #1565c0;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            background-color: #333333;
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
-            transition: transform 0.3s;
-        }
-
-        li:hover {
-            transform: scale(1.05);
-        }
-
-        .item-info {
-            display: flex;
-            align-items: center;
-        }
-
-        .item-info img {
-            width: 80px;
-            height: 80px;
-            margin-right: 15px;
-            border-radius: 50%;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .item-info p {
-            font-size: 1.1rem;
-            margin: 0;
-        }
-
-        .item-info p strong {
-            color: #FFD700;
-        }
-
-        .actions a {
-            margin-left: 10px;
-            padding: 8px 15px;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
-
-        .actions a.edit {
-            background-color: #4CAF50;
-        }
-
-        .actions a.edit:hover {
-            background-color: #388E3C;
-        }
-
-        .actions a.delete {
-            background-color: #E53935;
-        }
-
-        .actions a.delete:hover {
-            background-color: #C62828;
-        }
-
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #424242;
-            color: #fff;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            align-self: center; /* Center button horizontally */
-        }
-
-        .back-button:hover {
-            background-color: #616161;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="content">
-            <h1>Item List</h1>
-            <a href="{% url 'item_create' %}" class="create-button">Create New Item</a>
-            <ul>
-                {% for item in items %}
-                    <li>
-                        <div class="item-info">
-                            <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png" alt="{{ item.item_name }} Icon">
-                            <div>
-                                <p><strong>ID:</strong> {{ item.item_id }}</p>
-                                <p><strong>Name:</strong> {{ item.item_name }}</p>
-                                <p><strong>Cost:</strong> ${{ item.cost }}</p>
+{% block content %}
+<body class="item-body">
+    <div class="item-list-container">
+        <div class="item-container">
+            <div class="content">
+                <h1>Item List</h1>
+                <a href="{% url 'item_create' %}" class="create-button">Create New Item</a>
+                <ul class="item-list-ul">
+                    {% for item in items %}
+                        <li class="item-list-li">
+                            <div class="item-info">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png" alt="{{ item.item_name }} Icon">
+                                <div>
+                                    <p><strong>ID:</strong> {{ item.item_id }}</p>
+                                    <p><strong>Name:</strong> {{ item.item_name }}</p>
+                                    <p><strong>Cost:</strong> ${{ item.cost }}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="actions">
-                            <a href="{% url 'item_update' item.pk %}" class="edit">Edit</a>
-                            <a href="{% url 'item_delete' item.pk %}" class="delete">Delete</a>
-                        </div>
-                    </li>
-                {% empty %}
-                    <li>No items available.</li>
-                {% endfor %}
-            </ul>
+                            <div class="actions">
+                                <a href="{% url 'item_update' item.pk %}" class="edit">Edit</a>
+                                <a href="{% url 'item_delete' item.pk %}" class="delete">Delete</a>
+                            </div>
+                        </li>
+                    {% empty %}
+                        <li>No items available.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <a href="{% url 'home' %}" class="back-button">Back to Home</a>
         </div>
-        <a href="{% url 'home' %}" class="back-button">Back to Home</a>
     </div>
 </body>
 </html>
+{% endblock %}

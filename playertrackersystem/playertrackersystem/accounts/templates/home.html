@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #4a4a8d;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        a.button:hover {
+            background-color: #357ab8;
+        }
+        .actions {
+            margin-top: 20px;
+        }
+        .actions a {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Player Management System!</h2>
+        {% if username %}
+            <p>Hello, {{ username }}!</p>  
+        {% endif %}
+
+       
+        <a href="{% url 'register' %}" class="button">Register a Player</a>
+
+       
+        <div class="actions">
+            <a href="{% url 'player_list' %}" class="button">View Players</a>
+        </div>
+    </div>
+</body>
+</html>

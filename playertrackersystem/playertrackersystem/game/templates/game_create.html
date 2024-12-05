@@ -1,0 +1,49 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Game</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'images/PlayerTracker.png' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'css/create.css' %}"> {% endcomment %}
+</head>
+<body>
+    <div class="container">
+        <h1>Create New Game</h1>
+        <form method="post" enctype="multipart/form-data" id="gameForm">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <!-- Add an id to the button and disable it initially -->
+            <div class="buttons">
+                <button type="submit" class="button" id="addGameButton" disabled>Add Game</button>
+                <a href="javascript:history.back()" class="btn-back">Back</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript to enable button after typing -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("gameForm");
+            const button = document.getElementById("addGameButton");
+
+            form.addEventListener("input", function () {
+                let formFilled = false;
+
+                for (const input of form.elements) {
+                    if (input.type !== "submit" && input.value.trim() !== "") {
+                        formFilled = true;
+                        break;
+                    }
+                }
+                button.disabled = !formFilled;
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="all-games">All Games</h1>
+        {% for game in games %}
+        <div class="game-card">
+            <a href="{% url 'game_detail' game_name=game.game_name %}">
+                <img src="{{ game.image.url }}" alt="{{ game.game_name }}" class="game-image">
+                <h2 class="game-title">{{ game.game_name }}</h2>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

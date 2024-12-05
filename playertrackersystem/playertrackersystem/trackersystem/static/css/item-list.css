@@ -1,0 +1,139 @@
+/* Encapsulating all styles under the `.item-list-container` class */
+.item-list-container {
+    /* font-family: 'Arial', sans-serif; */
+    background: linear-gradient(to bottom right, #4A90E2, #9013FE);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    margin: 0;
+}
+
+.item-list-container .item-container {
+    /* max-width: 800px; */
+    /* width: 100%; */
+    background: #0d72e7;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+}
+
+.item-list-container .item-container .content {
+    flex: 1;
+}
+
+.item-list-container h1 {
+    color: #FFD700;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.item-list-container a.create-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 12px 25px;
+    background-color: #0d47a1;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    align-self: center;
+}
+
+.item-list-container a.create-button:hover {
+    background-color: #1565c0;
+}
+
+.item-list-container .item-list-ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.item-list-container .item-list-ul .item-list-li {
+    background-color: #333333;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s;
+}
+
+.item-list-container .item-list-ul .item-list-li:hover {
+    transform: scale(1.05);
+}
+
+.item-list-container .item-info {
+    display: flex;
+    align-items: center;
+}
+
+.item-list-container .item-info img {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.item-list-container .item-info p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.item-list-container .item-info p strong {
+    color: #FFD700;
+}
+
+.item-list-container .actions a {
+    margin-left: 10px;
+    padding: 8px 15px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.item-list-container .actions a.edit {
+    background-color: #4CAF50;
+}
+
+.item-list-container .actions a.edit:hover {
+    background-color: #388E3C;
+}
+
+.item-list-container .actions a.delete {
+    background-color: #E53935;
+}
+
+.item-list-container .actions a.delete:hover {
+    background-color: #C62828;
+}
+
+.item-list-container .back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #424242;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    align-self: center;
+}
+
+.item-list-container .back-button:hover {
+    background-color: #616161;
+}

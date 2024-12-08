@@ -1,0 +1,186 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a full-screen background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #4A90E2, #9013FE);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    margin-top: 70px; /* To prevent overlap with navbar */
+}
+
+/* Centered container */
+.container {
+    text-align: center;
+    padding: 50px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Title style */
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #D1F1FF;
+    margin-bottom: 40px;
+}
+
+/* Styling for the form container */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* Style for form elements */
+form p {
+    margin-bottom: 15px;
+    color: #D1F1FF;
+}
+
+/* Input fields */
+input[type="text"], input[type="file"], textarea {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid #D1F1FF;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+    background-color: #0063FF;
+    color: #D1F1FF;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0051D6;
+}
+
+/* Disabled button style */
+button[type="submit"]:disabled {
+    background-color: #888; /* Faded gray color */
+    color: #ccc; /* Lighter text color */
+    cursor: not-allowed; /* Change cursor to not-allowed */
+    opacity: 0.6; /* Make it look more faded */
+    box-shadow: none; /* Remove any shadow if applied */
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.146);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.player {
+    color: white;
+}
+
+.tracker {
+    color: #0063FF;
+}
+
+.navbar img {
+    width: 50px;
+    height: auto;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #0063FF;
+}
+
+.navbar .auth-links a {
+    background-color: #0063FF;
+    color: #D1F1FF;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar .auth-links a:hover {
+    background-color: #0051D6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+}

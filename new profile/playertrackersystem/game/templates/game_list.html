@@ -1,0 +1,41 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Games</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'images/PlayerTracker.png' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head> 
+<body>
+    <!-- Landing Page Content -->
+    <div class="container">
+        <h1 class="all-games">All Games</h1>
+
+        <!-- Loop through the games and display each one in a card -->
+        {% for game in games %}
+        <div class="game-card">
+            <img src="{% static 'images/' %}{{ game.image }}" alt="{{ game.game_name }}" class="game-image">
+            <h2 class="game-title">{{ game.game_name }}</h2>
+            <!-- Only show buttons if game.id is available -->
+            {% if game.game_id %}
+            <div class="button-group">
+                <a href="{% url 'game_update' game.game_id %}">Update</a>
+                <a href="{% url 'game_delete' game.game_id %}">Delete</a>
+            </div>
+            {% else %}
+            <p class="error-message">Game ID is missing.</p>
+            {% endif %}
+        </div>        
+        {% endfor %}
+        
+        <div class="create-button">
+            <a href="{% url 'game_create' %}" class="button-group">Create Game</a>
+            <a href="javascript:history.back()" class="btn-back">Back</a>
+        </div>        
+    </div>
+</body>
+</html>
+{% endblock %}

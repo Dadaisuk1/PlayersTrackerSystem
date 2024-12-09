@@ -11,7 +11,7 @@ class PlayerForm(forms.ModelForm):
 
     class Meta:
         model = Player
-        fields = ['username', 'password']
+        fields = ['username', 'password', 'profile_picture']
 
     def save(self, commit=True):
         player = super().save(commit=False)

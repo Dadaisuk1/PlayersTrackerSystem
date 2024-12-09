@@ -94,21 +94,29 @@ def delete_player(request, playerID):
     return render(request, 'delete_player.html', {'player': player})
 
 def profile_view(request):
-    player_id = request.session.get('player_id')  # Assuming you store player ID in session
+    player_id = request.session.get('player_id')
     if player_id:
-        player = Player.objects.get(playerID=player_id)
-        
+        player = Player.objects.get(playerID=player_id)  # Get the player instance
+
+        # Display profile (view-only mode)
+        return render(request, 'profile.html', {'player': player})  # Pass the player instance to template
+    
+    return redirect('login')  # If player not found in session, redirect to login
+
+def edit_profile_view(request):
+    player_id = request.session.get('player_id')
+    if player_id:
+        player = Player.objects.get(playerID=player_id)  # Get the player instance
+
         if request.method == 'POST':
-            form = PlayerForm(request.POST, instance=player)
+            form = PlayerForm(request.POST, request.FILES, instance=player)  # Handle file upload
             if form.is_valid():
-                # Hash the password before saving
-                player.password = make_password(form.cleaned_data['password'])
                 form.save()
                 messages.success(request, 'Profile updated successfully!')
-                return redirect('profile')  # Redirect to profile page after saving
+                return redirect('profile')  # Redirect to the profile page after saving
         else:
-            form = PlayerForm(instance=player)  # Pre-populate form with current player data
-        
-        return render(request, 'profile.html', {'form': form})
+            form = PlayerForm(instance=player)  # Pre-populate the form with player's data
+
+        return render(request, 'edit_profile.html', {'form': form, 'player': player})  # Pass the form and player instance to template
     
-    return redirect('login')  # Redirect to login if player is not logged in
+    return redirect('login')  # If player not found in session, redirect to login

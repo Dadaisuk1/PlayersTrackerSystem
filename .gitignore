@@ -11,6 +11,7 @@ db.sqlite3       # SQLite database (if used)
 *.db             # Database files
 *.sqlite3        # SQLite3 database files
 *.env            # Environment variables file
+playertrackersystem/db.sqlite3
 
 # Virtual environment
 darwinenv

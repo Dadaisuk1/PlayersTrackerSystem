@@ -5,6 +5,7 @@ class Player(models.Model):
     playerID = models.AutoField(primary_key=True)
     username = models.CharField(max_length=100, unique=True)  # Ensure unique usernames
     password = models.CharField(max_length=128)  # Use enough space for hashed passwords
+    profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
 
     def save(self, *args, **kwargs):
         # Hash the password if it's not already hashed

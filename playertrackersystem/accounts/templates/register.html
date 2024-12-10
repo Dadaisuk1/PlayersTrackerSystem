@@ -51,6 +51,34 @@
         </div>
     </div>
 
-    <script src="{% static 'js/signup.js' %}"></script>
+    <script>
+        function toggleSubmitButton() {
+            const checkbox = document.getElementById('confirmCheckbox');
+            const submitButton = document.getElementById('submitButton');
+            submitButton.disabled = !checkbox.checked;
+        }
+        
+        function validatePasswords() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const errorSpan = document.getElementById('passwordError');
+
+            if (password !== confirmPassword) {
+                errorSpan.style.display = 'block'; // Show error message
+                return false; // Prevent form submission
+            } else {
+                errorSpan.style.display = 'none'; // Hide error message
+                return true; // Allow form submission
+            }
+        }
+        
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const icon = input.nextElementSibling.querySelector('i');
+            const type = input.type === 'password' ? 'text' : 'password';
+            input.type = type;
+            icon.classList.toggle('fa-eye-slash');
+        }        
+    </script>
 </body>
 </html>

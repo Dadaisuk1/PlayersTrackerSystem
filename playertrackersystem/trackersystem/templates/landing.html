@@ -15,8 +15,8 @@
         <span class="logo">MOBA Player Tracker</span>
         
         <div class="nav-button">
-            <button class="login-btn">Login</button>
-            <button class="signup-btn">Sign up</button>
+            <a class="login-btn" href="{% url 'login' %}">Login</a>
+            <a class="signup-btn" href="{% url 'register' %}">Register</a>
         </div>
     </div>
 
@@ -30,7 +30,11 @@
                 Welcome to the ultimate MOBA Player Tracker! Our platform empowers players to monitor stats, analyze performance, and dive deep into match analytics. From hero usage to inventory insights, track your progress and dominate the battlefield. Your journey to becoming a top-tier MOBA player starts here!
             </div>
             <div class="try-button">
-                <button class="try-btn">Try Now!</button>
+                <button class="try-btn">
+                    <a href="{% url 'register' %}">
+                        Try Now!
+                    </a>
+                </button>
             </div>
         </div>
         <div class="column-2">

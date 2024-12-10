@@ -27,10 +27,11 @@ body {
     position: relative;
 }
 
-.nav-bar .logo{
+.nav-bar .logo {
     font-size: 20px;
     font-weight: 800;
     color: var(--paragraph-color);
+    cursor: pointer;
 }
 
 .nav-bar .nav-button {
@@ -38,31 +39,36 @@ body {
     gap: 30px;
 }
 
-.nav-bar .nav-button button {
+.nav-bar .nav-button a {
     font-size: 14px;
     font-weight: 700;
     width: 100px;
     height: 40px;
     border-radius: 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.4s ease-out;
 }
 
 .nav-bar .nav-button .login-btn {
     border: var(--button-color) solid 3px;
     background-color: var(--primary-color);
     color: var(--button-color);
-    transition: border 0.4s ease-out, background-color 0.4s ease-out;
 }
 
 .nav-bar .nav-button .signup-btn {
     background-color: var(--button-color);
     color: var(--primary-color);
-    transition: 0.4s ease-out;
 }
 
-.login-btn:hover {
+/* Hover effects for <a> elements to match buttons */
+.nav-bar .nav-button .login-btn:hover {
     cursor: pointer;
-    border: 2px solid #ff889a;
-    background-color: #f4b2bc2d;
+    border: 3px solid #ff889a00;
+    background-color: var(--button-color);
     color: var(--primary-color);
 }
 
@@ -71,7 +77,8 @@ body {
     color: var(--primary-color); /* Ensure visibility */
     cursor: pointer;
 }
-/* NAVIVATION-BAR ENDS HERE */
+/* NAVIGATION-BAR ENDS HERE */
+
 
 /* TOP CONTAINER STARTS HERE */
 .top-container {
@@ -108,6 +115,11 @@ body {
     border-radius: 10px;
     cursor: pointer;
     transition: 0.4s ease-out;
+}
+
+.top-container .column-1 .try-button button a {
+    text-decoration: none;
+    color: var(--primary-color)
 }
 
 .top-container .column-1 .try-button button:hover {
@@ -160,6 +172,8 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
     align-items: flex-start;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
 .middle-container .tail .game-card img {
@@ -188,6 +202,12 @@ body {
     line-height: 2;
     font-weight: 500;
 }
+
+.middle-container .game-card:hover {
+    transform: translateY(-10px); /* Slight rise on hover */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+}
+
 /* MIDDLE CONTAINER ENDS HERE */
 
 /* BOTTOM CONTAINER STARTS HERE */
@@ -231,6 +251,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 

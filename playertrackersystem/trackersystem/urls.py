@@ -7,7 +7,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     # path('', views.landing_page, name='landing_page'),  # Landing page as the root URL
-    path('', views.home_page, name='home'),
+    path('', views.landing, name='landing'),
+    path("home/", views.home_page, name="home"),
     path('admin/', admin.site.urls),
     path('heroes/', include('hero.urls')),
     path('game/', include('game.urls')),

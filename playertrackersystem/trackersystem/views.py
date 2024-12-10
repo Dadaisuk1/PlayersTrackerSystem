@@ -11,3 +11,4 @@ def home_page(request):
 
 def landing(request):
     return render (request, 'landing.html')
+    

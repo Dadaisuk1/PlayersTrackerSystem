@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    border: none;
+    padding: none;
+    margin: none;
+    /* background: #232946; */
+    --primary-color: #232946;
+    --button-color: #EEBBC3;
+    --hover-button: ##FFBDC7;
+    --headline-color: #FFFFFE;
+    --paragraph-color: #B8C1EC;
+    --back-color: #D4D8F0;
+    --stoke-color: #121629;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Figtree", serif;
+    background-color: var(--primary-color);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--headline-color);
+}
+
+.profile-container {
+    display: flex;
+    /* background-color: var(--paragraph-color); */
+    /* padding: 50px; */
+    border-radius: 20px;
+    justify-content: space-between;
+    /* gap: 10px; */
+}
+
+.profile-container .column-1 {
+    background-color: var(--paragraph-color);
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+    padding-left: 30px;
+    width: 90%;
+    border-radius: 30px 0px 0px 30px;
+}
+
+.profile-container .column-1 form {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-container .column-1 form input {
+    background-color: var(--primary-color);
+    color: var(--paragraph-color);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+    width: 400px;
+    height: 30px;
+    margin-top: 12px;
+}
+
+.profile-container .column-1 form .input-user {
+    padding-bottom: 10px;
+}
+
+.profile-container .column-1 form .input-group {
+    margin-bottom: 15px;  /* Add space between fields */
+}
+
+
+.profile-container .column-1 .joined input {
+    display: flex;
+    flex-direction: column;
+    /* padding: 0; */
+    margin: 0;
+}
+
+.profile-container .column-1 .joined .span-join {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--primary-color);
+}
+
+.profile-container .column-1 .change-pass {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    gap: 10px;
+}
+
+.profile-container .column-1 .change-pass .head-tile {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary-color);
+    gap: 5px;
+}
+
+.profile-container .column-1 .submit-btn {
+    background-color: var(--stoke-color);
+    text-align: center;
+    width: 100%;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.profile-container .column-1 .submit-btn a {
+    text-decoration: none;
+    color: var(--paragraph-color);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.profile-container .column-2 {
+    background-color: var(--paragraph-color);
+    opacity: 90%;
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: top;
+    padding-right: 30px;
+    width: 200px;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.profile-container .column-2 .circle-profile {
+    /* display: flex; */
+    justify-content: center;
+}
+
+.profile-container .column-2  .circle-profile i {
+    font-size: 20px;
+    z-index: 1;
+    translate: calc(220%) calc(-105%);
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 100%;
+    border: var(--paragraph-color) solid 5px;
+    cursor: pointer;
+}
+
+.profile-container .column-2  .circle-profile img {
+    /* width: 20%; */
+    margin-top: 30px;
+    width: fit-content;
+    height: 20%;
+    display: flex;
+    /* position: relative; */
+    border-radius: 100%;
+    position: center;
+    border: var(--primary-color) solid 5px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--stoke-color);
+    color: var(--paragraph-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.back-button:hover {
+    background-color: var(--hover-button);
+}
+
+

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    border: none;
+    padding: none;
+    margin: none;
+    /* background: #232946; */
+    --primary-color: #232946;
+    --button-color: #EEBBC3;
+    --hover-button: ##FFBDC7;
+    --headline-color: #FFFFFE;
+    --paragraph-color: #B8C1EC;
+    --back-color: #D4D8F0;
+    --stoke-color: #121629;
+}
+
+.profile-container {
+    display: flex;
+    /* background-color: var(--paragraph-color); */
+    /* padding: 50px; */
+    border-radius: 20px;
+    justify-content: space-between;
+    justify-content: center;
+    /* gap: 10px; */
+}
+
+
+.profile-container .column-1 {
+    background-color: var(--paragraph-color);
+    display: flex;
+
+    height: 80vh;
+    align-items: center;
+    padding-left: 30px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.profile-container .column-1 form {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-container .column-1 form input {
+    background-color: var(--primary-color);
+    color: var(--paragraph-color);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+    width: 400px;
+    height: 30px;
+    margin-top: 12px;
+}
+
+.profile-container .column-1 form .input-user {
+    padding-bottom: 10px;
+}
+
+.profile-container .column-1 form .input-group {
+    margin-bottom: 15px;  /* Add space between fields */
+}
+
+
+.profile-container .column-1 .joined input {
+    display: flex;
+    flex-direction: column;
+    /* padding: 0; */
+    margin: 0;
+}

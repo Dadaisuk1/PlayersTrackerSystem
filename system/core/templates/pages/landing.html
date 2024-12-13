@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="icon" href="{% static 'images/PTS icon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>PlayerTracker</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <span class="logo">MOBA Player Tracker</span>
+        
+        <div class="nav-button">
+            <a class="login-btn" href="{% url 'login' %}">Login</a>
+            <a class="signup-btn" href="{% url 'register' %}">Register</a>
+        </div>
+    </div>
+
+    <!-- Top Contianer -->
+    <div class="top-container">
+        <div class="column-1">
+            <div class="headline">
+                <p>Track Your MOBA Journey Like Never Before</p>
+            </div>
+            <div class="desc">
+                Welcome to the ultimate MOBA Player Tracker! Our platform empowers players to monitor stats, analyze performance, and dive deep into match analytics. From hero usage to inventory insights, track your progress and dominate the battlefield. Your journey to becoming a top-tier MOBA player starts here!
+            </div>
+            <div class="try-button">
+                <button class="try-btn">
+                    <a href="{% url 'register' %}">
+                        Try Now!
+                    </a>
+                </button>
+            </div>
+        </div>
+        <div class="column-2">
+            <img src="{% static 'images/DotaImage.svg' %}" alt="Dota 2 - Most Popular Game">
+        </div>
+    </div>
+
+    <!-- Middle Container -->
+    <div class="middle-container">
+        <div class="head">
+            <div class="headline">
+                <p>Most Search and Popular Games</p>
+            </div>
+            <div class="desc">
+                <p>Discover the most popular MOBA games all in one place! Explore trending titles, track top players, and dive into game stats.</p>
+            </div>
+        </div>
+        <div class="tail">
+            <div class="game-card">
+                <img src="{% static 'images/MobileLegends.jpg' %}" alt="Mobile Legends Bang Bang">
+                <div class="game-details">
+                    <h3>Mobile Legends: Bang Bang</h3>
+                    <p>Mobile Legends: Bang Bang is a fast-paced, 5v5 multiplayer online battle arena (MOBA) game designed for mobile devices. Join millions of players worldwide as you team up, strategize, and dominate the battlefield with unique heroes and thrilling gameplay.</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="{% static 'images/dota2.jpg' %}" alt="Dota 2">
+                <div class="game-details">
+                    <h3>Dota 2</h3>
+                    <p>Dota 2 is a world-renowned multiplayer online battle arena (MOBA) game where strategy meets skill. Choose from a vast roster of heroes, each with unique abilities, and engage in epic 5v5 battles. With its deep gameplay mechanics and competitive scene, Dota 2 is the ultimate challenge for players seeking mastery and glory on the battlefield!</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="{% static 'images/Hok.jpg' %}" alt="Honor of Kings">
+                <div class="game-details">
+                    <h3>Honor of Kings</h3>
+                    <p>Honor of Kings is a fast-paced multiplayer online battle arena (MOBA) game where players engage in 5v5 team battles, showcasing strategic gameplay, unique heroes, and thrilling combat. Designed for mobile devices, it offers stunning visuals and a variety of game modes, making it one of the most popular MOBAs worldwide.</p>
+                </div>
+            </div>
+            <div class="game-card">
+                <img src="{% static 'images/lol.jpg' %}" alt="League of Legends">
+                <div class="game-details">
+                    <h3>League of Legends</h3>
+                    <p>League of Legends (LoL) is a world-renowned multiplayer online battle arena (MOBA) game where teams of champions face off in strategic 5v5 battles. Players choose from a vast roster of unique characters, each with distinct abilities, and work together to destroy the enemy's base. Known for its competitive scene, vibrant community, and thrilling gameplay, LoL remains a staple in esports and online gaming.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bottom Container -->
+    <div class="bottom-container">
+        <div class="head">
+            <h3>Meet The Creator of MOBA Player Tracker</h3>
+            <p>Get to know the visionary behind the MOBA Player Tracker. Driven by a passion for competitive gaming and analytics, the creator brings you a platform tailored for players to track progress, refine skills, and conquer the MOBA universe!</p>
+        </div>
+        <div class="tail">
+            <div class="profile-card">
+                <img src="{% static 'images/darwin.jpg' %}" alt="Darwin The Creator">
+                <div class="left-side">
+                    <h3>Darwin Darryl Jean Largoza</h3>
+                    <p>UI/UX Designer and Developer</p>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="{% static 'images/sean.jpg' %}" alt="Seanjames Lacaba">
+                <div class="left-side">
+                    <h3>Seanjames C. Lacaba</h3>
+                    <p>Developer</p>
+                </div>
+            </div>
+            <div class="profile-card">
+                <img src="{% static 'images/amiel.jpg' %}" alt="Amiel Kenth Handayan">
+                <div class="left-side">
+                    <h3>Amiel Kenth Handayan</h3>
+                    <p>Developer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Container-->
+    <div class="about-container">
+        <div class="size-container">
+            <h3>About our Player Tracker System</h3>
+            <p>Welcome to MOBA Tracker - The largest MOBA Stats and most complete Tracking Site! Here you can track your MOBA Stats, progression, match history, and more! Your MOBA Profile also has all your hero and item usage! View our MOBA Database to see all the best items, reviewed by players like you. Check our MOBA Tracker Leaderboards - To see who is the best of the best - And try to take their spot!</p>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="footer-container">
+        <div class="right">
+            <div class="copy">
+                <p>2024 © <span>MOBA Player Tracker</span></p>
+            </div>
+            <div class="links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#support">Support</a>
+            </div>
+        </div>
+        <div class="left">
+            <div class="instagram">
+                <i class="fa-brands fa-instagram" style="color: #eebbc3;"></i>
+            </div>
+            <div class="discord">
+                <i class="fa-brands fa-discord" style="color: #eebbc3;"></i>
+            </div>
+            <div class="github">
+                <i class="fa-brands fa-github" style="color: #eebbc3;"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>

@@ -14,6 +14,7 @@ def hero_list(request):
 def hero_create(request):
     if request.method == 'POST':
         form = HeroForm(request.POST, request.FILES)  # Add request.FILES to handle file upload
+        print(request.POST)
         if form.is_valid():
             # Save the form and then redirect to hero list
             form.save()

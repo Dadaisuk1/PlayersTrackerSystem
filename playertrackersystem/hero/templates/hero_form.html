@@ -42,11 +42,12 @@
     <div class="container">
         <h1>Create New Hero</h1>
         <form method="post" enctype="multipart/form-data" id="heroForm">
+            
             {% csrf_token %}
             {{ form.as_p }}
 
             <!-- Add an id to the button and disable it initially -->
-            <button type="submit" class="button" id="addHeroButton" disabled>Add Hero</button>
+            <button type="submit" class="button" id="addHeroButton">Add Hero</button>
         </form>
     </div>
 
@@ -55,17 +56,23 @@
         document.addEventListener("DOMContentLoaded", function () {
             const form = document.getElementById("heroForm");
             const button = document.getElementById("addHeroButton");
-
+    
+            // Disable the button initially
+            button.disabled = true;
+    
+            // Listen for input events on the form
             form.addEventListener("input", function () {
-                let formFilled = false;
-
-                for (const input of form.elements) {
-                    if (input.type !== "submit" && input.value.trim() !== "") {
-                        formFilled = true;
-                        break;
-                    }
-                }
-                button.disabled = !formFilled;
+                // Check if any input is non-empty
+                const isFormFilled = Array.from(form.elements).some(input => {
+                    return (
+                        input.type !== "submit" && // Ignore the submit button
+                        input.type !== "hidden" && // Ignore hidden fields
+                        input.value.trim() !== ""  // Check for non-empty value
+                    );
+                });
+    
+                // Enable or disable the button based on input
+                button.disabled = !isFormFilled;
             });
         });
     </script>

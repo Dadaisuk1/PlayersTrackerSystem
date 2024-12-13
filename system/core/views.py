@@ -18,7 +18,9 @@ def landing (request):
 
 def home(request):
     games = Game.objects.all()  # Fetch all games
-    return render(request, 'pages/home.html', {'games': games})
+    player_id = request.session.get('player_id')  # Retrieve player ID from session
+    player = Player.objects.get(playerID=player_id) if player_id else None
+    return render(request, 'pages/home.html', {'games': games, 'player': player})
 
 def game_detail(request, game_id):
     game = get_object_or_404(Game, id=game_id)

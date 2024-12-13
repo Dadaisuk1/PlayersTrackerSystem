@@ -13,11 +13,11 @@ db.sqlite3       # SQLite database (if used)
 *.env            # Environment variables file
 
 # Virtual environment
-darwinenv
 amiel
 myenv
 djangoenv
 venv
+darwinenv
 
 # Django migrations
 migrations

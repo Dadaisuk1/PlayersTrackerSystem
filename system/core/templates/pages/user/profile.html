@@ -1,0 +1,24 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/edit_profile.css' %}">
+<div class="profile-container">
+    <h2>Profile</h2>
+    <div class="profile-content">
+        <div class="profile-picture-container">
+            {% if player.profile_picture %}
+                <img src="{{ player.profile_picture.url }}" alt="Profile Picture">
+            {% else %}
+                <img src="{% static 'images/default-profile.png' %}" alt="Default Profile Picture">
+            {% endif %}
+        </div>
+        <div class="profile-info">
+            <p>{{ player.username }}</p>
+        </div>
+    </div>
+    <a href="{% url 'edit_profile' %}">
+        <button class="edit-button">Edit Profile</button>
+    </a>
+</div>
+{% endblock %}

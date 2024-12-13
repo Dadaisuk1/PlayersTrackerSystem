@@ -1,0 +1,34 @@
+<!-- templates/game_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ game.name }}</title>
+</head>
+<body>
+    <h1>{{ game.name }}</h1>
+    <p>{{ game.description }}</p>
+
+    <h2>Heroes</h2>
+    <ul>
+        {% for hero in heroes %}
+            <li>{{ hero.name }} (Level: {{ hero.level }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Matches</h2>
+    <ul>
+        {% for match in matches %}
+            <li>
+                Match between {{ match.hero_1.name }} and {{ match.hero_2.name }}
+                {% if match.winner %}
+                    - Winner: {{ match.winner.name }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'home' %}">Back to all games</a>
+</body>
+</html>

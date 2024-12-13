@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayerTracker</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'images/PTS icon.png' %}">
+    <!-- Include Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Link to the external login CSS file -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="image-container"></div>
+        <div class="form-container">
+            <div class="logo">
+                <img src="{% static 'images/PTS-Logo.svg' %}" alt="PTS icon">
+                <h2>Login</h2>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" name="username" required placeholder="username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" id="password" placeholder="password" required>
+                    <span class="toggle-password" onclick="togglePassword('password')">
+                        <i class="fa-solid fa-eye-slash"></i>
+                    </span>
+                </div>
+
+                <input type="submit" value="Login" class="action-button">
+            </form>
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+            
+            <p>Don't have an account? <a href="{% url 'register' %}" class="link">Register Here</a></p>
+            <a href="{% url 'landing-page' %}" class="link">Back</a>
+        </div>
+    </div>
+    <script>
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const icon = input.nextElementSibling.querySelector('i');
+            const type = input.type === 'password' ? 'text' : 'password';
+            input.type = type;
+            icon.classList.toggle('fa-eye-slash');
+            icon.classList.toggle('fa-eye');
+        }  
+    </script>
+</body>
+</html>

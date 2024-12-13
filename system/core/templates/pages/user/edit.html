@@ -1,0 +1,36 @@
+{% extends 'components/base.html' %}
+
+{% block title %}PlayerTracker{% endblock %}
+
+{% block content %}
+    <div class="profile-container">
+        <div class="column-1">
+            <h2>Edit Profile</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <div class="input-user">
+                    <label>Username</label>
+                    {{ form.username }}
+                </div>
+
+                <div class="input-password">
+                    <label for="id_password">Password</label>
+                    {{ form.password }}
+                </div>
+
+                <div class="input-group">
+                    <label for="id_profile_picture">Profile Picture</label>
+                    {{ form.profile_picture }}
+                </div>
+
+                <div class="submit-btn">
+                    <button type="submit" class="submit-button">Save Changes</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Back Button -->
+        <a href="{% url 'profile' %}" class="back-button">Back to Profile</a>
+    </div>
+{% endblock %}

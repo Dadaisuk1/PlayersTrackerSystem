@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="icon" href="{% static 'images/PTS icon.png' %}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ player.username }}</h1>
+    
+    <h2>Your Profile:</h2>
+    <p>Username: {{ player.username }}</p>
+    <p>Email: {{ player.email }}</p>
+    <p>Total Matches: {{ player.total_matches }}</p>
+    <p>Win Rate: {{ player.win_rate }}%</p>
+    
+    <h2>All Players:</h2>
+    <ul>
+        {% for player in all_players %}
+            <li>{{ player.username }} - Matches: {{ player.total_matches }} - Win Rate: {{ player.win_rate }}%</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>

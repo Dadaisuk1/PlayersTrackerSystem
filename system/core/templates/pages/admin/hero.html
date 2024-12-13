@@ -1,0 +1,8 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="name">Hero Name:</label>
+    <input type="text" name="name" id="name" required>
+    <label for="level">Level:</label>
+    <input type="number" name="level" id="level" required>
+    <button type="submit">Create Hero</button>
+</form>

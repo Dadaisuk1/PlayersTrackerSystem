@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayerTracker</title>
+    {% load static %}
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'images/PTS icon.png' %}">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <!-- Logo -->
+        <div class="logo">
+            <span>MOBA Player Tracker</span>
+        </div>
+
+        <!-- Login/Sign Up Links -->
+        <div class="auth-links">
+            {% if player %}
+                <a class="profile-name" href="{% url 'profile' %}"> {{ player.username }}</a>
+                <a class="profile-logout" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1 class="all-games">All Games</h1>
+        <div class="games-grid">
+            {% for game in games %}
+                <div class="game-card">
+                    <a href="{% url 'game_detail' game_name=game.game_name %}">
+                        <img src="{{ game.image.url }}" alt="{{ game.game_name }}" class="game-image">
+                        <h2 class="game-title">{{ game.game_name }}</h2>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Right Section -->
+            <div class="right">
+                <div class="copy">
+                    <p>2024 © <span>Player <span class="tracker">Tracker</span> System</span></p>
+                </div>
+                <div class="links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#support">Support</a>
+                </div>
+            </div>
+
+            <!-- Left Section -->
+            <div class="left">
+                <div class="instagram">
+                    <i class="fa-brands fa-instagram" style="color: #eebbc3;"></i>
+                </div>
+                <div class="discord">
+                    <i class="fa-brands fa-discord" style="color: #eebbc3;"></i>
+                </div>
+                <div class="github">
+                    <i class="fa-brands fa-github" style="color: #eebbc3;"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

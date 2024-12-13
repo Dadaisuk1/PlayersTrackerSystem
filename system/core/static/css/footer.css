@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    border: none;
+    padding: none;
+    margin: none;
+    /* background: #232946; */
+    --primary-color: #232946;
+    --button-color: #EEBBC3;
+    --headline-color: #FFFFFE;
+    --paragraph-color: #B8C1EC;
+    --back-color: #D4D8F0;
+}
+
+footer{
+    color: #EEBBC3;
+    /* height: 100px; */
+    /* min-height: 100px; */
+    margin-top: 500px;
+}
+
+.footer-container{
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+}
+
+.footer-container .right{
+    font-size: 13px;
+    display: flex;
+    gap: 10px;
+}
+
+.footer-container .right .copy span{
+    color: #fffffe;
+}
+
+.footer-container .right .copy span .tracker{
+    /* color: #08A2FF; */
+    font-weight: bold;
+}
+
+.footer-container .right .links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-container .right .links a{
+    text-decoration: none;
+    color: #EEBBC3;
+}
+
+.footer-container .left{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-container .left{
+    font-size: 20px;
+}

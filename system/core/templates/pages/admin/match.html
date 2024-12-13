@@ -1,0 +1,16 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="hero_1">Hero 1:</label>
+    <select name="hero_1" id="hero_1">
+        {% for hero in heroes %}
+            <option value="{{ hero.id }}">{{ hero.name }}</option>
+        {% endfor %}
+    </select>
+    <label for="hero_2">Hero 2:</label>
+    <select name="hero_2" id="hero_2">
+        {% for hero in heroes %}
+            <option value="{{ hero.id }}">{{ hero.name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Create Match</button>
+</form>

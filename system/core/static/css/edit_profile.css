@@ -1,0 +1,83 @@
+/* General Reset */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --primary-color: #232946;
+    --button-color: #EEBBC3;
+    --headline-color: #FFFFFE;
+    --paragraph-color: #B8C1EC;
+    --back-color: #D4D8F0;
+    font-family: "figtree", sans-serif;
+}
+
+/* Profile Container Styling */
+.profile-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--back-color);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Profile Header */
+.profile-container h2 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Profile Content */
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Profile Picture Styling */
+.profile-picture-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #EEBBC3;
+    object-fit: cover;
+}
+
+/* Profile Info */
+.profile-info {
+    font-size: 18px;
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+.profile-info strong {
+    color: #333;
+}
+
+/* Edit Button */
+.edit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--primary-color);
+    background-color: #EEBBC3;
+    font-weight: 800;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #ffc7cf;
+}

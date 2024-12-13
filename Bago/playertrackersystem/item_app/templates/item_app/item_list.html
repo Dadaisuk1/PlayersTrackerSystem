@@ -1,0 +1,36 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<body class="item-body">
+    <div class="item-list-container">
+        <div class="item-container">
+            <div class="content">
+                <h1>Item List</h1>
+                <a href="{% url 'item_create' %}" class="create-button">Create New Item</a>
+                <ul class="item-list-ul">
+                    {% for item in items %}
+                        <li class="item-list-li">
+                            <div class="item-info">
+                                <img src="https://steamuserimages-a.akamaihd.net/ugc/558714681146750945/C638C8C6E9257FF84427D9DF574ABE0A941E05A4/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%2523000000&letterbox=false" alt="{{ item.item_name }} Icon">
+                                <div>
+                                    <p><strong>ID:</strong> {{ item.item_id }}</p>
+                                    <p><strong>Name:</strong> {{ item.item_name }}</p>
+                                    <p><strong>Cost:</strong> ${{ item.cost }}</p>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <a href="{% url 'item_update' item.pk %}" class="edit">Edit</a>
+                                <a href="{% url 'item_delete' item.pk %}" class="delete">Delete</a>
+                            </div>
+                        </li>
+                    {% empty %}
+                        <li>No items available.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <a href="{% url 'home' %}" class="back-button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

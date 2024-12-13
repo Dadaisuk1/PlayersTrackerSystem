@@ -1,0 +1,169 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Profile</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+       body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #5a8dee 0%, #7b47d1 80%);
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    height: 100vh; /* Ensures the body covers the full height */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: linear-gradient(90deg, #4e9dfd 0%, #6a63d2 100%);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 30px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffd700;
+}
+
+.profile-container {
+    max-width: 900px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profile-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.profile-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-picture-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info p {
+    font-size: 18px;
+    color: #fff;
+    margin: 5px 0;
+}
+
+.edit-button {
+    display: block;
+    margin: 20px auto 0;
+    background: linear-gradient(90deg, #4e9dfd 0%, #6a63d2 100%);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: auto;
+    text-align: center;
+}
+
+.edit-button:hover {
+    background: linear-gradient(90deg, #6a63d2 0%, #4e9dfd 100%);
+}
+
+footer {
+    background: linear-gradient(180deg, transparent 0%, #7b47d1 100%);
+    margin-top: auto; /* Ensures footer stays at the bottom */
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #ddd;
+}
+
+@media (max-width: 768px) {
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-picture-container img {
+        margin-bottom: 20px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="profile-container">
+        <h2>Your Profile</h2>
+
+        <div class="profile-content">
+            <div class="profile-picture-container">
+                {% if player.profile_picture %}
+                    <img src="{{ player.profile_picture.url }}" alt="Profile Picture">
+                {% else %}
+                    <img src="{% static 'default-profile.png' %}" alt="Default Profile Picture">
+                {% endif %}
+            </div>
+
+            <div class="profile-info">
+                <p><strong>Username:</strong> {{ player.username }}</p>
+                <p><strong>Username:</strong> {{ player.username }}</p>
+            </div>
+        </div>
+
+        <a href="{% url 'edit_profile' %}">
+            <button class="edit-button">Edit Profile</button>
+        </a>
+    </div>
+</body>
+
+</html>
+
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if form.instance.pk %}Edit{% else %}New{% endif %} Item</title>
+    <style>
+        /* Reset margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #4A90E2, #9013FE);
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background-color: #0d72e7 ;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            backdrop-filter: blur(10px); /* Adds a blur effect to the background behind the container */
+        }
+
+        h1 {
+            color: #000000; /* Bright cool blue */
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        form input[type="text"],
+        form input[type="number"],
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 2px solid #444;
+            border-radius: 8px;
+            background-color: #333; /* Dark background for inputs */
+            color: #fff;
+            transition: border-color 0.3s ease-in-out, background-color 0.3s;
+        }
+
+        form input[type="text"]:focus,
+        form input[type="number"]:focus,
+        form select:focus,
+        form textarea:focus {
+            border-color: #1E90FF; /* Bright blue focus border */
+            background-color: #444; /* Slightly lighter background on focus */
+            outline: none;
+        }
+
+        button[type="submit"] {
+            padding: 12px 25px;
+            background-color: #1E90FF; /* Cool blue */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button[type="submit"]:hover {
+            background-color: #4682B4; /* Lighter blue on hover */
+            transform: translateY(-3px);
+        }
+
+        button[type="submit"]:disabled {
+            background-color: #A9A9A9;
+            cursor: not-allowed;
+        }
+
+        .checkbox-container {
+            text-align: left;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .cancel-button {
+            display: inline-block;
+            margin-top: 20px;
+            color: #1E90FF; /* Cool blue */
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .cancel-button:hover {
+            color: #4682B4; /* Lighter blue on hover */
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            button[type="submit"] {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{% if form.instance.pk %}Edit{% else %}New{% endif %} Item</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Render the form fields -->
+            <div class="checkbox-container">
+                <input type="checkbox" id="confirmCheckbox" onclick="toggleSaveButton()">
+                <label for="confirmCheckbox">I confirm the details are correct</label>
+            </div>
+            <button type="submit" id="saveButton" disabled>Save</button>
+        </form>
+        <a href="{% url 'item_list' %}" class="cancel-button">Cancel</a>
+    </div>
+
+    <script>
+        function toggleSaveButton() {
+            const checkbox = document.getElementById('confirmCheckbox');
+            const saveButton = document.getElementById('saveButton');
+            saveButton.disabled = !checkbox.checked;
+        }
+    </script>
+</body>
+</html>

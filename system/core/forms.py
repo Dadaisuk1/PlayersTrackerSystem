@@ -1,5 +1,5 @@
 from django import forms
-from .models import Player
+from .models import Player, Game
 from django.contrib.auth.hashers import make_password
 
 class PlayerForm(forms.ModelForm):
@@ -11,7 +11,7 @@ class PlayerForm(forms.ModelForm):
 
     class Meta:
         model = Player
-        fields = ['username', 'email', 'password','profile_picture']
+        fields = ['username', 'email', 'password', 'profile_picture']
 
     def save(self, commit=True):
         player = super().save(commit=False)
@@ -21,3 +21,8 @@ class PlayerForm(forms.ModelForm):
         if commit:
             player.save()
         return player
+
+class GameForm(forms.ModelForm):
+    class Meta:
+        model = Game
+        fields = ['game_name', 'game_type', 'image']

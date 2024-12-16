@@ -28,7 +28,13 @@ urlpatterns = [
     # Admin Side (for managing content)
     # path('manage/', views.dashboard, name='dashboard'),
     path('manage/user/', views.player_list, name='player_list'),
+
     path('manage/game/', create_game, name='create_game'),
+    path('manage/game/<str:game_name>/', views.game_detail, name='game_detail'),
+    path('manage/game/update/<int:game_id>/', views.game_update, name='game_update'),
+    path('manage/game/delete/<int:game_id>/', views.game_delete, name='game_delete'),
+
+
     path('manage/hero/<int:game_id>/', views.create_hero, name='create_hero'),
     path('manage/match/<int:match_id>/', views.create_match, name='create_match')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

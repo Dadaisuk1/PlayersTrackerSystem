@@ -6,7 +6,7 @@ from .models import Player, Game, Hero, Match
 # from django.contrib.auth.models import User
 
 # imported from Forms
-from .forms import PlayerForm
+from .forms import PlayerForm, GameForm
 
 # imported outside
 from django.contrib.auth import login, authenticate
@@ -18,7 +18,9 @@ def landing (request):
 
 def home(request):
     games = Game.objects.all()  # Fetch all games
-    return render(request, 'pages/home.html', {'games': games})
+    player_id = request.session.get('player_id')  # Retrieve player ID from session
+    player = Player.objects.get(playerID=player_id) if player_id else None
+    return render(request, 'pages/home.html', {'games': games, 'player': player})
 
 def game_detail(request, game_id):
     game = get_object_or_404(Game, id=game_id)
@@ -34,6 +36,34 @@ def create_game(request):
         game = Game.objects.create(name=name, description=description)
         return redirect('game_detail', game_id=game.id)  # Redirect to the game detail page
     return render(request, 'pages/admin/game.html')
+
+# Directory when i click a game
+def game_detail(request, game_name):
+    # Fetch the game based on the name
+    game = Game.objects.get(game_name = game_name)
+    return render(request, 'pages/user/game_detail.html', {'game': game})
+
+# UPDATE - Edit an existing game
+def game_update(request, game_id):  # Use game_id instead of id
+    game = get_object_or_404(Game, game_id=game_id)  # Use game_id instead of id
+    if request.method == 'POST':
+        form = GameForm(request.POST, instance=game)
+        if form.is_valid():
+            form.save()
+            return redirect('game_list')
+    else:
+        form = GameForm(instance=game)
+    return render(request, 'game_form.html', {'form': form})
+
+# DELETE - Remove a game
+def game_delete(request, game_id):  # Use game_id instead of id
+    game = get_object_or_404(Game, game_id=game_id)  # Use game_id instead of id
+    if request.method == 'POST':
+        game.delete()
+        return redirect('game_list')
+    return render(request, 'game_confirm_delete.html', {'game': game})
+
+
 
 # View to create a hero
 def create_hero(request, game_id):
@@ -64,7 +94,7 @@ def sign_up(request):
         form = PlayerForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return render(request, 'pages/login.html', {'form':form})
     else:
         form = PlayerForm()
     return render(request, 'pages/signup.html', {'form': form})
@@ -164,18 +194,18 @@ def edit_profile_view(request):
 
 
 # Admin Dashboard
-# @login_required
-# def dashboard(request):
-#     # Get the logged-in user
-#     user = request.user
+@login_required
+def dashboard(request):
+    # Get the logged-in user
+    user = request.user
 
-#     # Get the corresponding player (if exists)
-#     player = Player.objects.filter(user=user).first()  # Get the player associated with the user
+    # Get the corresponding player (if exists)
+    player = Player.objects.filter(user=user).first()  # Get the player associated with the user
 
-#     # If you want to show all users and their players (optional)
-#     all_players = Player.objects.all()
+    # If you want to show all users and their players (optional)
+    all_players = Player.objects.all()
 
-#     return render(request, 'pages/admin/dashboard.html', {
-#         'player': player,
-#         'all_players': all_players,  # Pass this to template if needed
-#     })
+    return render(request, 'pages/admin/dashboard.html', {
+        'player': player,
+        'all_players': all_players,  # Pass this to template if needed
+    })

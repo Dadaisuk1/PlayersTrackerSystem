@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 
 * {
-    border: none;
-    padding: none;
-    margin: none;
-    /* background: #232946; */
     --primary-color: #232946;
     --button-color: #EEBBC3;
     --headline-color: #FFFFFE;
     --paragraph-color: #B8C1EC;
     --back-color: #D4D8F0;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -89,8 +93,7 @@ body {
     height: 500px;
     display: flex;
     justify-content: space-between;
-    margin: 50px 150px;
-    padding-top: 50px;
+    margin: 150px 150px;
     align-content: center;
     gap: 30px;
     padding-bottom: 100px;
@@ -144,7 +147,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    height: 950px;
+    height: 800px;
 }
 
 .middle-container .head {

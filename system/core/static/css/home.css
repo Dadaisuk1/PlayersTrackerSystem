@@ -146,7 +146,6 @@ a {
 }
 
 /* Show dropdown on hover or click */
-.profile-dropdown:hover .dropdown-menu,
 .profile-dropdown.active .dropdown-menu {
     display: block;
 }

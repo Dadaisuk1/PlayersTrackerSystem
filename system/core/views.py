@@ -65,21 +65,6 @@ def game_delete(request, game_id):  # Use game_id instead of id
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # View to create a hero
 def create_hero(request, game_id):
     game = get_object_or_404(Game, id=game_id)
@@ -109,7 +94,7 @@ def sign_up(request):
         form = PlayerForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return render(request, 'pages/login.html', {'form':form})
     else:
         form = PlayerForm()
     return render(request, 'pages/signup.html', {'form': form})

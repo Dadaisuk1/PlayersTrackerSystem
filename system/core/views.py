@@ -130,16 +130,22 @@ def home(request):
         return render(request, 'pages/home.html', {'player': player})
     return redirect('login')
 
+# Profile Picture
+@login_required
+def profile_view(request):
+    user = request.user
+    profile_pic = user.profile.image.url if user.profile.image else 'images/default-profile.png'
+    return render(request, 'pages/profile.html', {'profile_pic': profile_pic})
+
+
 
 # View all players (protected by login_required)
-
 def player_list(request):
     players = Player.objects.all()  # Get all players
     return render(request, 'pages/player_list.html', {'players': players})
 
 
 # Update an existing player
-
 def update_player(request, playerID):
     player = get_object_or_404(Player, playerID=playerID)
     if request.method == 'POST':

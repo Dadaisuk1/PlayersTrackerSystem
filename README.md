@@ -1,7 +1,7 @@
 <!-- ## Player Tracker System -->
 <div style="display: flex; align-items: center; gap: 10px;">
   <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/PTSLogo.svg"
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/PTSLogo.svg"
     alt="Player Tracker System Logo"
   />
 </div>
@@ -18,12 +18,12 @@
 
 <div style="display: flex; align-items: center; gap: 10px;">
   <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/python.svg"
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/python.svg"
     alt="Python Icon"
     style="height: auto;y"
   />
   <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/django.svg"
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/django.svg"
     alt="Django Icon"
     style="height: auto;"
   />
@@ -103,7 +103,7 @@
   </a>
   <a href="https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/darwindarryljean_largoza_cit_edu/EZEP77oURa5GuYXVeLkK-VkBcnK7KrnRwn5fhMBA_GeUsg?e=2WDLcF">
     <img
-      src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/Gahntt%20Chart.svg"
+      src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/Gahntt%20Chart.svg"
     />
   </a>
 </div>
@@ -111,7 +111,7 @@
 ### Entity Relationship Diagram
 <div style="display: flex; align-items: center; gap: 10px;">
   <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/PTSErd.svg"
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/PTSErd.svg"
     alt="ERD"
     style="height: auto;y"
   />
@@ -123,8 +123,8 @@
 
 | Profile | Name                    | GitHub Username            |
 |---------|-------------------------|----------------------------|
-| <img src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/Sean.jpg" width="50" disabled style="pointer-events: none;"> | Seanjames C. Lacaba       | [@Seanicks](https://github.com/Seanicks) |
-| <img src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/Amiel.jpg" width="50" style="pointer-events: none;"> | Amiel Kenth Handayan     | [@GoinHacky](https://github.com/GoinHacky)                      |
+| <img src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/Sean.jpg" width="50" disabled style="pointer-events: none;"> | Seanjames C. Lacaba       | [@Seanicks](https://github.com/Seanicks) |
+| <img src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/Amiel.jpg" width="50" style="pointer-events: none;"> | Amiel Kenth Handayan     | [@GoinHacky](https://github.com/GoinHacky)                      |
 | <img src="https://avatars.githubusercontent.com/u/112413548?v=4" width="50" style="pointer-events: none;"> | Darwin Darryl Jean Largoza      | [@Dadaisuk1](https://github.com/Dadaisuk1) |
 
 

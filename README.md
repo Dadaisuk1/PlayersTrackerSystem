@@ -118,15 +118,13 @@
   />
 </div>
 
-<div>
-  <h3>Developers</h3>
-</div>
 
-| Profile | Name                    | GitHub Username            |
-|---------|-------------------------|----------------------------|
-| <img src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/Sean.jpg" width="50" disabled style="pointer-events: none;"> | Seanjames C. Lacaba       | [@Seanicks](https://github.com/Seanicks) |
-| <img src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/Amiel.jpg" width="50" style="pointer-events: none;"> | Amiel Kenth Handayan     | [@GoinHacky](https://github.com/GoinHacky)                      |
-| <img src="https://avatars.githubusercontent.com/u/112413548?v=4" width="50" style="pointer-events: none;"> | Darwin Darryl Jean Largoza      | [@Dadaisuk1](https://github.com/Dadaisuk1) |
+<div style="display: flex; align-items: center; gap: 10px;">
+  <img
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/developers.svg"
+    style="height: auto;y"
+  />
+</div>
 
 
 

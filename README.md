@@ -89,7 +89,8 @@
 </h6>
 <div style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
   <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/media/main/hp.svg"
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/hp.svg"
+    alt="Just click to the logo's to go the links."
   />
   <a href="https://github.com/Dadaisuk1/PlayersTrackerSystem">
     <img

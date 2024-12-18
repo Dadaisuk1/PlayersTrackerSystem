@@ -121,6 +121,14 @@
   <h3>Developers</h3>
 </div>
 
+
+<div style="display: flex; align-items: center; gap: 10px;">
+  <img
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/content.png"
+    style="height: auto;y"
+  />
+</div>
+
 | Profile | Name                    | GitHub Username            |
 |---------|-------------------------|----------------------------|
 | <img src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/Sean.jpg" width="50" disabled style="pointer-events: none;"> | Seanjames C. Lacaba       | [@Seanicks](https://github.com/Seanicks) |

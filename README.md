@@ -92,7 +92,7 @@
     src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/hp.svg"
     alt="Just click to the logo's to go the links."
   />
-  <a href="https://github.com/Dadaisuk1/PlayersTrackerSystem">
+  <a href="https://github.com/Dadaisuk1/PlayersTrackerSystem" style="text-decoration: none;">
     <img
       src="https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white"
     />

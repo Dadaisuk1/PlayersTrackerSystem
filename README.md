@@ -97,12 +97,12 @@
       src="https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white"
     />
   </a>
-  <a href="https://www.figma.com/design/WjXHMBKKt3egnEBv4CqToQ/Player-Tracker-Statistics?node-id=0-1&t=zUkPcDDQ5tRJ1p2G-1">
+  <a href="https://www.figma.com/design/WjXHMBKKt3egnEBv4CqToQ/Player-Tracker-Statistics?node-id=0-1&t=zUkPcDDQ5tRJ1p2G-1" style="text-decoration: none;">
     <img
       src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=plastic&logo=figma&logoColor=white"
     />
   </a>
-  <a href="https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/darwindarryljean_largoza_cit_edu/EZEP77oURa5GuYXVeLkK-VkBcnK7KrnRwn5fhMBA_GeUsg?e=2WDLcF">
+  <a href="https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/darwindarryljean_largoza_cit_edu/EZEP77oURa5GuYXVeLkK-VkBcnK7KrnRwn5fhMBA_GeUsg?e=2WDLcF" style="text-decoration: none;">
     <img
       src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/Gahntt%20Chart.svg"
     />

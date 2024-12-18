@@ -1,24 +1,71 @@
-{% extends 'components/base.html' %}
 {% load static %}
-
-{% block content %}
-<link rel="stylesheet" href="{% static 'css/edit_profile.css' %}">
-<div class="profile-container">
-    <h2>Profile</h2>
-    <div class="profile-content">
-        <div class="profile-picture-container">
-            {% if player.profile_picture %}
-                <img src="{{ player.profile_picture.url }}" alt="Profile Picture">
-            {% else %}
-                <img src="{% static 'images/default-profile.png' %}" alt="Default Profile Picture">
-            {% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayerTracker</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- link for reset page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> 
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <span>MOBA Player Tracker</span>
+            </a>
         </div>
-        <div class="profile-info">
-            <p>{{ player.username }}</p>
+    </nav>
+    <div class="profile-container">
+        
+        <div class="column-1">
+            <div class="exit">
+                <a href="{% url 'home' %}" class="link">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </a>
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-user">
+                    <input type="text" placeholder="Username" value="{{ player.username }}" readonly>
+                </div>
+                <div class="input-email">
+                    <input type="email" placeholder="Email" value="{{ player.email }}" readonly>
+                </div>
+                <div class="joined">
+                    <p class="span-join">Joined on</p>
+                    <input type="text" value="{{ player.created_at|date:'F d, Y' }}" readonly>
+                </div>
+                <div class="change-pass">
+                    <div class="head-tile">
+                        <i class="fa-solid fa-key"></i>
+                        <p class="password">Change Password</p>
+                    </div>
+                    <div class="cur-pass">
+                        <input type="password" placeholder="Current Password">
+                    </div>
+                    <div class="new-pass">
+                        <input type="password" placeholder="New Password">
+                    </div>
+                    <div class="con-pass">
+                        <input type="password" placeholder="Confirm New Password">
+                    </div>
+                </div>
+                <div class="submit-btn">
+                    <button type="submit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+        <div class="column-2">
+            <div class="circle-profile">
+                <img src="{% if player.profile_picture %}{{ player.profile_picture.url }}{% else %}{% static 'images/default-profile.svg' %}{% endif %}" alt="Profile Picture">
+                <i class="fa-solid fa-pen"></i>
+            </div>
         </div>
     </div>
-    <a href="{% url 'edit_profile' %}">
-        <button class="edit-button">Edit Profile</button>
-    </a>
-</div>
-{% endblock %}
+</body>
+</html>

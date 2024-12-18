@@ -255,29 +255,34 @@ body {
     background-color: var(--headline-color); /* White background for cards */
     border: var(--back-color) solid 5px;
     color: var(--primary-color); /* Dark text for card content */
-    width: 250px;
+    width: 25%;
     border-radius: 12px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px;
     text-align: center;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     cursor: pointer;
+    justify-content: space-evenly;
+    padding: 10px 40px;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
-.bottom-container .profile-card:active {
-    color: var(--button-color);
-    transition-duration: 0.5ms;
+.bottom-container .profile-card .right-side {
+    align-items: center;
+    align-self: center;
+    display: flex;
+}
+
+.bottom-container .profile-card .left-side {
+    text-align: center;
 }
 
 .bottom-container .profile-card img {
     width: 80px;
     height: 80px;
-    border-radius: 50%; /* Circular profile image */
+    border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
 }
 
 .bottom-container .profile-card h3 {
@@ -288,13 +293,20 @@ body {
 
 .bottom-container .profile-card p {
     font-size: 14px;
-    color: #606F89; /* Slightly muted color for role description */
+    color: #606F89;
 }
 
 .bottom-container .profile-card:hover {
-    transform: translateY(-10px); /* Slight rise on hover */
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 19px rgba(184, 193, 236, 0.25);
 }
+
+.bottom-container .profile-card:active {
+    color: var(--button-color);
+    transition-duration: 0.5ms;
+    box-shadow: 0px 0px 19px rgba(238, 187, 195, 0.90);
+}
+
 /* BOTTOM CONTAINER ENDS HERE */
 
 /* ABOUT CONTAINER STARTS HERE */
@@ -335,7 +347,7 @@ footer{
     justify-content: space-between;
     align-items: center;
     padding: 30px 150px;
-    color: var(--button-color);
+    color: var(--paragraph-color);
 }
 
 .footer-container .right{
@@ -357,7 +369,7 @@ footer{
 
 .footer-container .right .links a{
     text-decoration: none;
-    color: var(--button-color);
+    color: var(--paragraph-color);
     font-weight: 600;
 }
 
@@ -369,5 +381,9 @@ footer{
 
 .footer-container .left{
     font-size: 20px;
+}
+
+.footer-container .left a{
+    color: var(--paragraph-color);
 }
 /* FOOTER CONTAINER ENDS HERE */

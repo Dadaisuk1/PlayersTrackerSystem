@@ -14,6 +14,11 @@
 <body>
     <div class="overlay"></div>
     <div class="container">
+        <div class="exit">
+            <a href="{% url 'landing-page' %}" class="link">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </a>
+        </div>
         <div class="image-container"></div>
         <div class="form-container">
             <div class="logo">
@@ -23,7 +28,7 @@
             <form method="POST">
                 {% csrf_token %}
                 <div class="input-group">
-                    <input type="text" name="username" required placeholder="username" required>
+                    <input type="text" name="username" placeholder="username" required>
                 </div>
                 <div class="input-group">
                     <input type="password" name="password" id="password" placeholder="password" required>
@@ -41,7 +46,6 @@
             {% endif %}
             
             <p>Don't have an account? <a href="{% url 'register' %}" class="link">Register Here</a></p>
-            <a href="{% url 'landing-page' %}" class="link">Back</a>
         </div>
     </div>
     <script>

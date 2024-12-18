@@ -13,6 +13,11 @@
 <body>
     <div class="overlay"></div>
     <div class="container">
+        <div class="exit">
+            <a href="{% url 'landing-page' %}" class="link">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </a>
+        </div>
         <div class="image-container"></div>
         <div class="form-container">
             <div class="logo">
@@ -53,7 +58,6 @@
                 <input type="submit" value="Register" id="submitButton" disabled>
             </form>
             <p>Already have an account? <a href="{% url 'login' %}" class="link">Login</a></p>
-            <a href="{% url 'landing-page' %}" class="link">Back</a>
         </div>
     </div>
 

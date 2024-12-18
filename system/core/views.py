@@ -107,9 +107,9 @@ def login_view(request):
 
         try:
             player = Player.objects.get(username=username)
-            if check_password(password, player.password):  # Verify the password
-                request.session['player_id'] = player.playerID  # Store player ID in session
-                return redirect('home')  # Redirect to home page
+            if check_password(password, player.password):
+                request.session['player_id'] = player.playerID
+                return redirect('home')
             else:
                 messages.error(request, 'Invalid username or password')
         except Player.DoesNotExist:
@@ -129,8 +129,6 @@ def home(request):
         player = Player.objects.get(playerID=player_id)
         return render(request, 'pages/home.html', {'player': player})
     return redirect('login')
-
-
 
 
 # Profile
@@ -157,19 +155,10 @@ def profile_view(request):
 
 
 
-
-
-
-
-
-
-
-
 # View all players (protected by login_required)
 def player_list(request):
     players = Player.objects.all()  # Get all players
     return render(request, 'pages/player_list.html', {'players': players})
-
 
 # Update an existing player
 def update_player(request, playerID):
@@ -185,33 +174,12 @@ def update_player(request, playerID):
 
 
 # Delete a player
-
 def delete_player(request, playerID):
     player = get_object_or_404(Player, playerID=playerID)
     if request.method == 'POST':
         player.delete()  # Delete the player
         return redirect('player_list')
     return render(request, 'delete_player.html', {'player': player})
-
-
-
-def edit_profile_view(request):
-    player_id = request.session.get('player_id')
-    if player_id:
-        player = Player.objects.get(playerID=player_id)  # Get the player instance
-
-        if request.method == 'POST':
-            form = PlayerForm(request.POST, request.FILES, instance=player)  # Handle file upload
-            if form.is_valid():
-                form.save()
-                messages.success(request, 'Profile updated successfully!')
-                return redirect('profile')  # Redirect to the profile page after saving
-        else:
-            form = PlayerForm(instance=player)  # Pre-populate the form with player's data
-
-        return render(request, 'pages/user/edit.html', {'form': form, 'player': player})  # Pass the form and player instance to template
-    
-    return redirect('plogin')  # If player not found in session, redirect to login
 
 
 # Admin Dashboard

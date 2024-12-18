@@ -7,7 +7,7 @@
     <link rel="icon" href="{% static 'images/PTS icon.png' %}">
     <link rel="stylesheet" href="{% static 'css/landing.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    {% comment %} link for reset page {% endcomment %}
+    <!-- link for reset page -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> 
     <title>PlayerTracker</title>
 </head>
@@ -94,21 +94,27 @@
         </div>
         <div class="tail">
             <div class="profile-card">
-                <img src="{% static 'images/darwin.jpg' %}" alt="Darwin The Creator">
+                <div class="right-side">
+                    <img src="{% static 'images/darwin.jpg' %}" alt="Darwin The Creator">
+                </div>
                 <div class="left-side">
                     <h3>Darwin Darryl Jean Largoza</h3>
                     <p>UI/UX Designer and Developer</p>
                 </div>
             </div>
             <div class="profile-card">
-                <img src="{% static 'images/sean.jpg' %}" alt="Seanjames Lacaba">
+                <div class="right-side">
+                    <img src="{% static 'images/sean.jpg' %}" alt="Seanjames Lacaba">
+                </div>
                 <div class="left-side">
                     <h3>Seanjames C. Lacaba</h3>
                     <p>Developer</p>
                 </div>
             </div>
             <div class="profile-card">
-                <img src="{% static 'images/amiel.jpg' %}" alt="Amiel Kenth Handayan">
+                <div class="right-side">
+                    <img src="{% static 'images/amiel.jpg' %}" alt="Amiel Kenth Handayan">
+                </div>
                 <div class="left-side">
                     <h3>Amiel Kenth Handayan</h3>
                     <p>Developer</p>
@@ -137,16 +143,17 @@
                 <a href="#support">Support</a>
             </div>
         </div>
-        <div class="left">
-            <div class="instagram">
-                <i class="fa-brands fa-instagram" style="color: #eebbc3;"></i>
-            </div>
-            <div class="discord">
-                <i class="fa-brands fa-discord" style="color: #eebbc3;"></i>
-            </div>
-            <div class="github">
-                <i class="fa-brands fa-github" style="color: #eebbc3;"></i>
-            </div>
+        <!-- Left Section -->
+        <div class="left social-icons">
+            <a href="https://instagram.com/PlayersTrackerSystem" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://discord.com/PlayersTrackerSystem" aria-label="Discord">
+                <i class="fa-brands fa-discord"></i>
+            </a>
+            <a href="https://github.com/Dadaisuk1/PlayersTrackerSystem" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
         </div>
     </div>
 </footer>

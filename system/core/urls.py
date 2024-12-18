@@ -23,7 +23,6 @@ urlpatterns = [
     path('user/', views.profile_view, name='profile'),
     path('user/update/<int:playerID>/', views.update_player, name='update_player'),  # Update player details
     path('user/delete/<int:playerID>/', views.delete_player, name='delete_player'),
-    path('user/edit/', views.edit_profile_view, name='edit_profile'), 
 
     # Admin Side (for managing content)
     # path('manage/', views.dashboard, name='dashboard'),

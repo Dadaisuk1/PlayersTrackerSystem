@@ -1,7 +1,7 @@
 <!-- ## Player Tracker System -->
 <div style="display: flex; align-items: center; gap: 10px;">
   <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/PTSLogo.svg"
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/PTSLogo.svg"
     alt="Player Tracker System Logo"
   />
 </div>
@@ -18,12 +18,12 @@
 
 <div style="display: flex; align-items: center; gap: 10px;">
   <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/python.svg"
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/python.svg"
     alt="Python Icon"
     style="height: auto;y"
   />
   <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/django.svg"
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/django.svg"
     alt="Django Icon"
     style="height: auto;"
   />
@@ -89,21 +89,22 @@
 </h6>
 <div style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
   <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/hp.svg"
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/hp.svg"
+    alt="Just click to the logo's to go the links."
   />
-  <a href="https://github.com/Dadaisuk1/PlayersTrackerSystem">
+  <a href="https://github.com/Dadaisuk1/PlayersTrackerSystem" style="text-decoration: none;">
     <img
       src="https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white"
     />
   </a>
-  <a href="https://www.figma.com/design/WjXHMBKKt3egnEBv4CqToQ/Player-Tracker-Statistics?node-id=0-1&t=zUkPcDDQ5tRJ1p2G-1">
+  <a href="https://www.figma.com/design/WjXHMBKKt3egnEBv4CqToQ/Player-Tracker-Statistics?node-id=0-1&t=zUkPcDDQ5tRJ1p2G-1" style="text-decoration: none;">
     <img
       src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=plastic&logo=figma&logoColor=white"
     />
   </a>
-  <a href="https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/darwindarryljean_largoza_cit_edu/EZEP77oURa5GuYXVeLkK-VkBcnK7KrnRwn5fhMBA_GeUsg?e=2WDLcF">
+  <a href="https://cebuinstituteoftechnology-my.sharepoint.com/:x:/g/personal/darwindarryljean_largoza_cit_edu/EZEP77oURa5GuYXVeLkK-VkBcnK7KrnRwn5fhMBA_GeUsg?e=2WDLcF" style="text-decoration: none;">
     <img
-      src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/Gahntt%20Chart.svg"
+      src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/Gahntt%20Chart.svg"
     />
   </a>
 </div>
@@ -111,31 +112,20 @@
 ### Entity Relationship Diagram
 <div style="display: flex; align-items: center; gap: 10px;">
   <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/PTSErd.svg"
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/PTSErd.svg"
     alt="ERD"
     style="height: auto;y"
   />
 </div>
 
-<div>
-  <h3>Developers</h3>
-</div>
-
+---
 
 <div style="display: flex; align-items: center; gap: 10px;">
   <img
-    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/content.png"
+    src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/media/developers.svg"
     style="height: auto;y"
   />
 </div>
-
-| Profile | Name                    | GitHub Username            |
-|---------|-------------------------|----------------------------|
-| <img src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/Sean.jpg" width="50" disabled style="pointer-events: none;"> | Seanjames C. Lacaba       | [@Seanicks](https://github.com/Seanicks) |
-| <img src="https://github.com/Dadaisuk1/Dadaisuk1/blob/main/Amiel.jpg" width="50" style="pointer-events: none;"> | Amiel Kenth Handayan     | [@GoinHacky](https://github.com/GoinHacky)                      |
-| <img src="https://avatars.githubusercontent.com/u/112413548?v=4" width="50" style="pointer-events: none;"> | Darwin Darryl Jean Largoza      | [@Dadaisuk1](https://github.com/Dadaisuk1) |
-
-
 
 
 

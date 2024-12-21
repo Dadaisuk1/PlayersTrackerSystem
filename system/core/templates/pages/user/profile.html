@@ -62,10 +62,35 @@
         </div>
         <div class="column-2">
             <div class="circle-profile">
-                <img src="{% if player.profile_picture %}{{ player.profile_picture.url }}{% else %}{% static 'images/default-profile.svg' %}{% endif %}" alt="Profile Picture">
-                <i class="fa-solid fa-pen"></i>
+                <img src="{% if player.profile_picture %}{{ player.profile_picture.url }}{% else %}{% static 'images/default-profile.svg' %}{% endif %}" 
+                    alt="Profile Picture" id="profile-picture-preview">
+                
+                <!-- Pen icon with a hidden file input -->
+                <label for="profile-picture-upload" class="upload-icon">
+                    <i class="fa-solid fa-pen"></i>
+                </label>
+                <input type="file" id="profile-picture-upload" name="profile_picture" accept="image/*" style="display: none;">
             </div>
         </div>
+        
     </div>
+    <script>
+        const fileInput = document.getElementById('profile-picture-upload');
+        const submitButton = document.getElementById('submit-profile-picture');
+        const previewImage = document.getElementById('profile-picture-preview');
+
+        // Trigger form submission when a file is selected
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    previewImage.src = e.target.result;  // Show preview of the selected image
+                };
+                reader.readAsDataURL(file);
+                submitButton.click();  // Submit the form
+            }
+        });
+    </script>
 </body>
 </html>

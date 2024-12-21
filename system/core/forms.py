@@ -11,15 +11,17 @@ class PlayerForm(forms.ModelForm):
 
     class Meta:
         model = Player
-        fields = ['username', 'email', 'password', 'profile_picture']
-
+        fields = ['username', 'email', 'password', 'profile_picture']  # Fields to be updated
+    
     def save(self, commit=True):
         player = super().save(commit=False)
+        
         # Only hash and update the password if it was provided
         if self.cleaned_data['password']:
             player.password = make_password(self.cleaned_data['password'])
+        
         if commit:
-            player.save()
+            player.save()  # Save the updated player instance
         return player
 
 class GameForm(forms.ModelForm):

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils.text import slugify
 from django.core.exceptions import ValidationError
+from django.contrib.auth.hashers import make_password
 from datetime import timedelta
 
 class Player(models.Model):

@@ -131,7 +131,6 @@ def home(request):
     return redirect('login')
 
 
-# Profile
 # @login_required
 def profile_view(request):
     player_id = request.session.get('player_id')
@@ -143,22 +142,40 @@ def profile_view(request):
     
     return redirect('login')  # If player not found in session, redirect to login
 
+
 # View all players (protected by login_required)
 def player_list(request):
-    players = Player.objects.all()  # Get all players
+    players = Player.objects.all()  # Fetch all players from the database
     return render(request, 'pages/player_list.html', {'players': players})
 
 # Update an existing player
-def update_player(request, playerID):
-    player = get_object_or_404(Player, playerID=playerID)
-    if request.method == 'POST':
-        form = PlayerForm(request.POST, instance=player)
-        if form.is_valid():
-            form.save()
-            return redirect('player_list')
-    else:
-        form = PlayerForm(instance=player)
-    return render(request, 'pages/user/update.html', {'form': form})
+@login_required
+def update_player_view(request):
+    # Get player_id from session
+    player_id = request.session.get('player_id')
+    
+    if player_id:
+        try:
+            player = Player.objects.get(playerID=player_id)  # Get player instance
+        except Player.DoesNotExist:
+            messages.error(request, "Player not found.")
+            return redirect('profile')  # Redirect to profile or another page if player doesn't exist
+        
+        if request.method == 'POST':
+            form = PlayerForm(request.POST, request.FILES, instance=player)  # Bind form with player instance
+            if form.is_valid():
+                form.save()  # Save the updated player information
+                messages.success(request, "Your profile has been updated successfully!")
+                return redirect('profile')  # Redirect to profile page after successful update
+            else:
+                messages.error(request, "There was an error updating your profile. Please try again.")
+        
+        else:
+            form = PlayerForm(instance=player)  # Prefill form for GET request
+        
+        return render(request, 'pages/user/update.html', {'form': form})
+    
+    return redirect('login')  # Redirect to login if player not found in session
 
 
 # Delete a player

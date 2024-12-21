@@ -52,7 +52,7 @@
 <body>
     <div class="container">
         <h2>Update Player Information</h2>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">  <!-- Added enctype for file uploads -->
             {% csrf_token %}
             {{ form.as_p }}  <!-- Renders the form fields automatically -->
             <button type="submit">Update Player</button>

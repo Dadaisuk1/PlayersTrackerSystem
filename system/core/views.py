@@ -143,18 +143,6 @@ def profile_view(request):
     
     return redirect('login')  # If player not found in session, redirect to login
 
-# def profile_view(request):
-#     player_id = request.session.get('player_id')
-#     profile_pic = player_id.profile.image.url if player_id.profile.image else 'images/default-profile.svg'
-#     if player_id:
-#         player = Player.objects.get(playerID=player_id)  # Get the player instance
-#         # Display profile (view-only mode)
-#         return render(request, 'pages/user/profile.html', {'player': player, 'profile_picture':profile_pic})  # Pass the player instance to template
-    
-#     return redirect('login')  # If player not found in session, redirect to login
-
-
-
 # View all players (protected by login_required)
 def player_list(request):
     players = Player.objects.all()  # Get all players

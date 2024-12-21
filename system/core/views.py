@@ -6,7 +6,7 @@ from .models import Player, Game, Hero, Match
 # from django.contrib.auth.models import User
 
 # imported from Forms
-from .forms import PlayerForm, GameForm
+from .forms import PlayerForm, GameForm, ProfileForm
 
 # imported outside
 from django.contrib.auth import login, authenticate
@@ -17,16 +17,16 @@ def landing (request):
     return render (request, 'pages/landing.html');
 
 def home(request):
-    games = Game.objects.all()  # Fetch all games
+    game = Game.objects.all()  # Fetch all games
     player_id = request.session.get('player_id')  # Retrieve player ID from session
     player = Player.objects.get(playerID=player_id) if player_id else None
-    return render(request, 'pages/home.html', {'games': games, 'player': player})
+    return render(request, 'pages/home.html', {'game': game, 'player': player})
 
 def game_detail(request, game_id):
     game = get_object_or_404(Game, id=game_id)
     heroes = game.heroes.all()  # Get all heroes for this game
     matches = game.matches.all()  # Get all matches for this game
-    return render(request, 'pages/game.html', {'game': game, 'heroes': heroes, 'matches': matches})
+    return render(request, 'pages/user/game.html', {'game': game, 'heroes': heroes, 'matches': matches})
 
 # View to create a game
 def create_game(request):
@@ -143,13 +143,14 @@ def profile_view(request):
     return redirect('login')  # If player not found in session, redirect to login
 
 
+
 # View all players (protected by login_required)
 def player_list(request):
     players = Player.objects.all()  # Fetch all players from the database
     return render(request, 'pages/player_list.html', {'players': players})
 
 # Update an existing player
-@login_required
+# @login_required
 def update_player_view(request):
     # Get player_id from session
     player_id = request.session.get('player_id')
@@ -162,9 +163,13 @@ def update_player_view(request):
             return redirect('profile')  # Redirect to profile or another page if player doesn't exist
         
         if request.method == 'POST':
-            form = PlayerForm(request.POST, request.FILES, instance=player)  # Bind form with player instance
+            profile_user = Player.objects.get(player_id=request.player.player_id)
+
+            form = PlayerForm(request.POST or None, request.FILES or None, instance=player)
+            profile_form = ProfileForm(request.POST or None, request.FILES or None, instance=profile_user)
             if form.is_valid():
                 form.save()  # Save the updated player information
+                profile_form.save()
                 messages.success(request, "Your profile has been updated successfully!")
                 return redirect('profile')  # Redirect to profile page after successful update
             else:
@@ -173,7 +178,7 @@ def update_player_view(request):
         else:
             form = PlayerForm(instance=player)  # Prefill form for GET request
         
-        return render(request, 'pages/user/update.html', {'form': form})
+        return render(request, 'pages/user/update.html', {'form': form}, {'profile_form': profile_form})
     
     return redirect('login')  # Redirect to login if player not found in session
 

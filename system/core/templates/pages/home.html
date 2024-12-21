@@ -30,7 +30,8 @@
         <div class="profile-dropdown">
             <!-- Profile Button -->
             <button class="profile-btn">
-                <img src="{% static 'images/default-profile.svg' %}" alt="Profile Picture" class="profile-pic">
+                <img src="{% if player.profile_picture %}{{ player.profile_picture.url }}{% else %}{% static 'images/default-profile.svg' %}{% endif %}" 
+                    alt="Profile Picture" id="profile-picture-preview" class="profile-pic">
             </button>
 
             <!-- Dropdown Menu -->
@@ -64,7 +65,7 @@
     <main class="container">
         <h1 class="all-games">All Games</h1>
         <div class="games-grid">
-            {% for game in games %}
+            {% for game in game %}
                 <div class="game-card">
                     <a href="{% url 'game_detail' game_name=game.game_name %}">
                         <img src="{{ game.image.url }}" alt="{{ game.game_name }}" class="game-image">

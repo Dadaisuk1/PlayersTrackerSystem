@@ -11,7 +11,7 @@ class Player(models.Model):
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=128)  # Hashed password
     profile_picture = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
-    games = models.ManyToManyField('Game', related_name='players')
+    # games = models.ManyToManyField('Game', related_name='players')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):

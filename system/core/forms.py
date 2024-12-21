@@ -23,6 +23,13 @@ class PlayerForm(forms.ModelForm):
         if commit:
             player.save()  # Save the updated player instance
         return player
+    
+class ProfileForm(forms.ModelForm):
+    profile_image = forms.ImageField(label="Profile Picture")
+
+    class Meta:
+        model = Player
+        fields = ('profile_image', )
 
 class GameForm(forms.ModelForm):
     class Meta:

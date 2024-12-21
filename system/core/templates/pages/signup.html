@@ -27,22 +27,26 @@
             <form method="post" action="{% url 'register' %}" onsubmit="return validatePasswords()">
                 {% csrf_token %}
                 <div class="input-group">
-                    <input type="text" name="username" placeholder="username" required>
+                    <input type="text" name="username" placeholder=" " required>
+                    <label for="username">username</label>
                 </div>
 
                 <div class="input-group">
-                    <input type="text" name="email" placeholder="email" required>
+                    <input type="text" name="email" placeholder=" " required>
+                    <label for="email">email</label>
                 </div>
 
                 <div class="input-group">
-                    <input type="password" name="password" id="password" placeholder="password" required>
+                    <input type="password" name="password" id="password" placeholder=" " required>
+                    <label for="password">password</label>
                     <span class="toggle-password" onclick="togglePassword('password')">
                         <i class="fa-solid fa-eye-slash"></i>
                     </span>
                 </div>
 
                 <div class="input-group">
-                    <input type="password" name="confirm_password" id="confirmPassword" placeholder="confirm password" required>
+                    <input type="password" name="confirm_password" id="confirmPassword" placeholder=" " required>
+                    <label for="confirm_password">confirm password</label>
                     <span class="toggle-password" onclick="togglePassword('confirmPassword')">
                         <i class="fa-solid fa-eye-slash"></i>
                     </span>
@@ -84,12 +88,14 @@
         
         function togglePassword(inputId) {
             const input = document.getElementById(inputId);
-            const icon = input.nextElementSibling.querySelector('i');
+            const toggleSpan = input.parentElement.querySelector('.toggle-password');
+            const icon = toggleSpan.querySelector('i');
             const type = input.type === 'password' ? 'text' : 'password';
+            
             input.type = type;
             icon.classList.toggle('fa-eye-slash');
             icon.classList.toggle('fa-eye');
-        }        
+        }         
     </script>
 </body>
 </html>

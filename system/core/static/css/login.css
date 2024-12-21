@@ -113,7 +113,8 @@ input[type="password"] {
     background-color: var(--headline-color);
     color: var(--primary-color);
     font-weight: 600;
-    font-family: "Figtree", serif;;
+    font-family: "Figtree", serif;
+    outline: none;
 }
 
 input[type="text"]:focus,
@@ -133,7 +134,7 @@ input[type="password"]:focus {
 }
 
 input[type="submit"] {
-    padding: 12px 20px;
+    padding: 15px 20px;
     background-color: var(--button-color);
     border: var(--stoke-color) solid 5px;
     color: var(--primary-color);
@@ -167,8 +168,28 @@ input[type="checkbox"]:checked {
     text-decoration: none;
 }
 
-input:active {
-    color: var(--paragraph-color);
+label {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    transform: translateY(10%);
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+
+input:focus + label,
+/* input:active + label, */
+input:not(:placeholder-shown) + label {
+    top: 0%;
+    font-size: 12px;
+    color: #121629;
+}
+
+input:active ,
+input:focus {
     transition-duration: 0.5ms;
     box-shadow: 0px 0px 19px rgba(184, 193, 236, 0.90);
 }
